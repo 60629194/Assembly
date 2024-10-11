@@ -1,0 +1,31 @@
+[shared-]
+	pmark="C:\MASM615\hello.asm" 11 1
+	version=3
+[debug-]
+	target="c:\masm615\hello.exe"
+	synonym=;C:\MASM615
+	memwin=vm1b 0x0A4A:0x0000 
+	memwin=vm2b DS:0 
+[cv]
+	wndstate=0 80 32 0 1 0 0 0 0 0 0 0 0 0 -1
+	wndstate=1 40 6 0 1 0 1 0 0 0 0 0 0 0 -1
+	wndstate=2 40 6 7 1 0 1 0 0 0 0 0 0 0 -1
+	wndstate=3 60 26 0 7 1 1 0 0 0 10 2 0 0 -1
+	wndstate=4 67 9 3 12 0 0 0 0 0 0 0 0 0 -1
+	wndstate=5 69 8 0 33 0 1 0 5 0 0 0 0 0 -1
+	wndstate=6 80 6 1 41 0 1 0 0 0 2 2 0 0 -1
+	wndstate=7 19 40 62 1 0 1 0 0 0 0 0 0 0 -1
+	wndstate=8 67 8 0 26 0 0 0 0 0 0 0 0 0 -1
+	wndstate=9 80 6 2 41 0 1 0 1 0 1 1 0 0 -1
+	command=use auto
+	command=n10
+	screensize=43
+	command=oh+
+	command=ov+
+	command=oa+
+	command=vs1
+	command=oc+
+	command=of+
+	command=o3-
+	command=ollf   
+	tracespeed=250
