@@ -1,0 +1,9 @@
+.MODEL SMALL
+.CODE
+ADDITION PROC
+    MOV AL, num1
+    ADD AL, num2
+    MOV result, AL
+    RET
+ADDITION ENDP
+END

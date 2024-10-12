@@ -1,0 +1,9 @@
+.MODEL SMALL
+.CODE
+SUBTRACTION PROC
+    MOV AL, num1
+    SUB AL, num2
+    MOV result, AL
+    RET
+SUBTRACTION ENDP
+END
