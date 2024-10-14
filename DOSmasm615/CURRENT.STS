@@ -112,21 +112,21 @@ PWB-GENERATED FILE: DO NOT MODIFY
     build: message "Build all" file line
 
 [debug-]
-	target="c:\lab.exe"
-	synonym=;C:
-	memwin=vm1b 0x05E7:0x0000 
+	target="d:\abrick~1.exe"
+	synonym=;D:
+	memwin=vm1b DS:0 
 	memwin=vm2b DS:0 
 [cv]
 	wndstate=0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1
 	wndstate=1 67 6 0 1 0 1 0 0 0 0 0 0 0 -1
 	wndstate=2 34 8 33 1 0 0 0 0 0 0 0 0 0 -1
-	wndstate=3 67 23 0 7 0 1 0 0 0 6 0 0 0 -1
+	wndstate=3 67 23 0 7 1 1 0 0 0 44 44 0 0 -1
 	wndstate=4 67 9 3 12 0 0 0 0 0 0 0 0 0 -1
-	wndstate=5 67 6 0 30 1 1 0 0 0 0 0 0 0 -1
+	wndstate=5 67 6 0 30 0 1 0 0 0 0 0 0 0 -1
 	wndstate=6 67 6 3 33 0 1 0 0 0 0 0 0 0 -1
 	wndstate=7 13 41 67 1 0 1 0 0 0 0 0 0 0 -1
 	wndstate=8 67 8 0 26 0 0 0 0 0 0 0 0 0 -1
-	wndstate=9 67 6 0 36 0 1 0 1 0 4 1 0 0 -1
+	wndstate=9 67 6 0 36 0 1 0 1 0 1 0 0 0 -1
 	command=use auto
 	command=n10
 	screensize=43
