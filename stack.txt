@@ -1,0 +1,32 @@
+.model small
+.data
+	value1 db 1h
+	value2 db 2h
+	value3 db 3h
+.stack
+.code
+main proc
+	mov ax, @data
+	mov ds, ax
+	
+	push value1
+	push value2
+	push value3
+	pop bx
+	pop cx
+	pop dx
+	
+	mov ax, 4c00h
+	int 21h
+main endp
+end main
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
