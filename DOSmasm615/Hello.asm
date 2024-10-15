@@ -1,16 +1,56 @@
-; Sampel code for HelloWorld using MASM615 and DOSBox
-.MODEL SMALL        ; Define memory model as small
-.STACK 100H         ; Define stack size as 100h (256 bytes)
-.DATA               ; Start of data segment
-MSG db 10,13,'    Fakhar STEM Spher:  ',10,13,'$'  ; Define a message string with carriage return and line feed at the beginning and end
-.CODE               ; Start of code segment
-MAIN PROC           ; Start of main procedure
-    MOV AX, @DATA      ; Move the address of the data segment into the AX register
-    MOV DS, AX         ; Move the address of the data segment into the DS register
-    MOV DX, OFFSET MSG ; Put the offset address of the message string into the DX register
-    mov AH,09          ; Set AH register to 09h (function to print a string)
-    INT 21h            ; Call interrupt 21h (print the message)
-    MOV AH,4CH         ; Set AH register to 4Ch (function to terminate the program)
-    INT 21h            ; Call interrupt 21h (terminate program)
-MAIN ENDP           ; End of main procedure
-END MAIN            ; End of program
+.model small
+.stack 100h 
+.data
+.code
+main proc
+; Set Graphics Mode
+	MOV AX,11h; High Resolution B/W Mode: 640x480 B/W graphics
+;Above line Means AH = 00 and AL = 11h
+	INT 10h; Selecting Inerrupt for Graphics ;(Video); mode
+; Displaying Pixel
+	MOV AH, 0Ch; Write pixel on the screen
+	MOV AL, 01h ;white Color
+	MOV CX,120 ; X- Coordinate as Column # 
+	MOV DX,120;  Y- Coordinate as Row #
+;  Drawing Righ Top Line of Diamond from A(100,150) to B(130,180)
+.repeat
+	int 10h
+	dec dx
+.until(dx==70)
+
+;  Drawinging Right Bottom Line of Diamond from B(130,180) to C(160,150)
+.repeat
+	int 10h
+	dec cx
+.until(cx==70)
+
+;  Drawinging Left Bottom Line of Diamond from C(160,150) to D(130,120)
+.repeat
+	int 10h
+	inc dx
+.until(dx==120)
+
+;  Drawinging Left Top Line of Diamond from D(130,120) to A(100,150)
+.repeat
+	int 10h
+	inc cx
+.until(cx==120)
+
+
+ClearScreen:
+	
+	MOV AH, 08h ; input a character from Keyboard withouot displaying on the screen
+	INT 21h
+	
+.IF AL != 13
+	JMP ClearScreen
+.ENDIF
+; Shifting Video Mode to Text Mode Means it Clears the Screen
+	mov al , 03 ; function code for setting the text mode.
+	mov ah,0    ; Video Mode
+	int 10h		; Switching from Video Mode to Text Mode
+
+mov ah,4ch      ; Terminate program
+int 21h
+main endp
+end main         ; End of program
