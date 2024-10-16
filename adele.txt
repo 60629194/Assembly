@@ -10,31 +10,121 @@ main proc
 ; Displaying Pixel
 	MOV AH, 0Ch; Write pixel on the screen
 	MOV AL, 01h ;white Color
-	MOV CX,120 ; X- Coordinate as Column # 
-	MOV DX,120;  Y- Coordinate as Row #
+	MOV CX, 100 ; X- Coordinate as Column # 
+	;MOV DX,0;  Y- Coordinate as Row #
 ;  Drawing Righ Top Line of Diamond from A(100,150) to B(130,180)
+;right up 
 .repeat
+    mov bx, cx ; (cx-c0)^2+(dx-d0)^2=r^2
+    sub bx, 100 ; cx-c0
+    mov ax, bx ; ^2
+    mul ax
+    mov bx, ax  ; bx=(cx-c0)^2
+    mov ax, 6400 ;ax=r^2
+    sub ax, bx ; ax=r^2-(cx-c0)^2=(dx-d0)^2
+    mov bx, ax ; bx=ax=r^2-(cx-c0)^2=(dx-d0)^2
+    mov si, 0
+sq1: mov ax, si
+    mul ax
+    inc si
+    cmp ax, bx
+    jbe sq1
+    ; si=sqrt (dx-d0)^2= dx-d0
+    mov dx, 100 ;  d0
+    sub dx, si ; 
+    inc cx
+    mov bx, dx
+    mov ax, cx
+    mov dx, bx
+	mov cx, ax
+    mov ah, 0Ch
+    mov al, 01h
 	int 10h
-	dec dx
-.until(dx==70)
-
-;  Drawinging Right Bottom Line of Diamond from B(130,180) to C(160,150)
+.until(cx==180)
+;right down
 .repeat
-	int 10h
-	dec cx
-.until(cx==70)
-
-;  Drawinging Left Bottom Line of Diamond from C(160,150) to D(130,120)
+    mov bx, cx ; (cx-c0)^2+(dx-d0)^2=r^2
+    sub bx, 100 ; cx-c0
+    mov ax, bx ; ^2
+    mul ax
+    mov bx, ax  ; bx=(cx-c0)^2
+    mov ax, 6400 ;ax=r^2
+    sub ax, bx ; ax=r^2-(cx-c0)^2=(dx-d0)^2
+    mov bx, ax ; bx=ax=r^2-(cx-c0)^2=(dx-d0)^2
+    mov si, 0
+sq2: mov ax, si
+    mul ax
+    inc si
+    cmp ax, bx
+    jbe sq2
+    ; si=sqrt (dx-d0)^2= dx-d0
+    mov dx, 100 ;  d0
+    add dx, si ; 
+    dec cx
+    mov bx, dx
+    mov ax, cx
+    mov dx, bx
+	mov cx, ax
+    mov ah, 0Ch
+    mov al, 01h
+    int 10h
+.until(cx==100)
+;left up
 .repeat
+mov bx, cx ; (cx-c0)^2+(dx-d0)^2=r^2
+    sub bx, 100 ; cx-c0
+    mov ax, bx ; ^2
+    mul ax
+    mov bx, ax  ; bx=(cx-c0)^2
+    mov ax, 6400 ;ax=r^2
+    sub ax, bx ; ax=r^2-(cx-c0)^2=(dx-d0)^2
+    mov bx, ax ; bx=ax=r^2-(cx-c0)^2=(dx-d0)^2
+    mov si, 0
+sq3: mov ax, si
+    mul ax
+    inc si
+    cmp ax, bx
+    jbe sq3
+    ; si=sqrt (dx-d0)^2= dx-d0
+    mov dx, 100 ;  d0
+    sub dx, si ; 
+    dec cx
+    mov bx, dx
+    mov ax, cx
+    mov dx, bx
+	mov cx, ax
+    mov ah, 0Ch
+    mov al, 01h
 	int 10h
-	inc dx
-.until(dx==120)
-
-;  Drawinging Left Top Line of Diamond from D(130,120) to A(100,150)
+.until(cx==20)
+;left down
 .repeat
-	int 10h
-	inc cx
-.until(cx==120)
+mov bx, cx ; (cx-c0)^2+(dx-d0)^2=r^2
+    sub bx, 100 ; cx-c0
+    mov ax, bx ; ^2
+    mul ax
+    mov bx, ax  ; bx=(cx-c0)^2
+    mov ax, 6400 ;ax=r^2
+    sub ax, bx ; ax=r^2-(cx-c0)^2=(dx-d0)^2
+    mov bx, ax ; bx=ax=r^2-(cx-c0)^2=(dx-d0)^2
+    mov si, 0
+sq4: mov ax, si
+    mul ax
+    inc si
+    cmp ax, bx
+    jbe sq4
+    ; si=sqrt (dx-d0)^2= dx-d0
+    mov dx, 100 ;  d0
+    add dx, si ; 
+    inc cx
+    mov bx, dx
+    mov ax, cx
+    mov dx, bx
+	mov cx, ax
+    mov ah, 0Ch
+    mov al, 01h
+    int 10h
+.until(cx==100)
 
 
 ClearScreen:
