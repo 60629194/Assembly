@@ -10,45 +10,149 @@ main proc
 ; Displaying Pixel
 	MOV AH, 0Ch; Write pixel on the screen
 	MOV AL, 01h ;white Color
-	MOV CX, 200 ; X- Coordinate as Column # 
-	MOV DX, 300;  Y- Coordinate as Row #
+	MOV CX, 100 ; X- Coordinate as Column # 
+	MOV DX, 18;  Y- Coordinate as Row #
     int 10h
-;  Drawing Righ Top Line of Diamond from A(100,150) to B(130,180)
-.repeat
-    dec dx
-    push CX
-    mov ax, dx
-    push DX
-	mov dx, 200
-    sub ax, dx ;=k=y-200
-    mul ax ; k^2
-    mov bx, 10000
-    sub bx, ax
-
-    mov cx, 0
-    .repeat
-    inc cx
-    mov ax, cx
-    mov dx, 0
-    mul ax
-    .until(ax>bx)
-    ;cx is now divider
-    mov bx, 200
-    pop DX
-    mov ax, dx
     push dx
+;  Drawing Righ Top Line of Diamond from A(100,150) to B(130,180)
+;right up 
+.repeat
+    mov bx, cx ; (cx-c0)^2+(dx-d0)^2=r^2
+    sub bx, 100 ; cx-c0
+    mov ax, bx ; ^2
+    mul ax
+    mov bx, ax  ; bx=(cx-c0)^2
+    mov ax, 6400 ;ax=r^2
+    sub ax, bx ; ax=r^2-(cx-c0)^2=(dx-d0)^2
+    mov bx, ax ; bx=ax=r^2-(cx-c0)^2=(dx-d0)^2
+    mov si, 0
+sq1: mov ax, si
+    mul ax
+    inc si
+    cmp ax, bx
+    jbe sq1
+    ; si=sqrt (dx-d0)^2= -dx+d0
+    mov dx, 100 ;  d0
+    sub dx, si ; 
+    inc cx
+;add smooth function-------------
+    pop bx ; old dx
+    mov ax, dx ; new dx
     sub ax, bx
-    mov dx, 0
-    div cx ;ax=ax/cx
-    
-    pop DX
-    pop CX
-    ;dec dx
-    add CX, AX
-    MOV AH, 0Ch
-    MOV AL, 01h
+    mov si, ax
+    mov di, 0
+    cmp ax, 2
+    jae draw
+    jb quit
+draw:
+    inc di
+    inc bx
+    mov ax, cx
+    mov cx, ax
+    mov dx, bx
+    mov ah, 0Ch
+    mov al, 01h
+	int 10h
+    cmp di, si
+    jb draw
+    je quit
+quit:
+;---------------------------------
+    mov bx, dx;correct dx
+    mov ax, cx;correct cx
+    mov dx, bx
+	mov cx, ax
+    mov ah, 0Ch
+    mov al, 01h
+	int 10h
+    push dx
+.until(cx==180)
+pop dx
+;right down
+.repeat
+    mov bx, cx ; (cx-c0)^2+(dx-d0)^2=r^2
+    sub bx, 100 ; cx-c0
+    mov ax, bx ; ^2
+    mul ax
+    mov bx, ax  ; bx=(cx-c0)^2
+    mov ax, 6400 ;ax=r^2
+    sub ax, bx ; ax=r^2-(cx-c0)^2=(dx-d0)^2
+    mov bx, ax ; bx=ax=r^2-(cx-c0)^2=(dx-d0)^2
+    mov si, 0
+sq2: mov ax, si
+    mul ax
+    inc si
+    cmp ax, bx
+    jbe sq2
+    ; si=sqrt (dx-d0)^2= dx-d0
+    mov dx, 100 ;  d0
+    add dx, si ; 
+    dec cx
+    mov bx, dx
+    mov ax, cx
+    mov dx, bx
+	mov cx, ax
+    mov ah, 0Ch
+    mov al, 01h
     int 10h
-.until(DX==200)
+.until(cx==100)
+;left up
+.repeat
+mov bx, cx ; (cx-c0)^2+(dx-d0)^2=r^2
+    sub bx, 100 ; cx-c0
+    mov ax, bx ; ^2
+    mul ax
+    mov bx, ax  ; bx=(cx-c0)^2
+    mov ax, 6400 ;ax=r^2
+    sub ax, bx ; ax=r^2-(cx-c0)^2=(dx-d0)^2
+    mov bx, ax ; bx=ax=r^2-(cx-c0)^2=(dx-d0)^2
+    mov si, 0
+sq3: mov ax, si
+    mul ax
+    inc si
+    cmp ax, bx
+    jbe sq3
+    ; si=sqrt (dx-d0)^2= dx-d0
+    mov dx, 100 ;  d0
+    sub dx, si ; 
+    dec cx
+    mov bx, dx
+    mov ax, cx
+    mov dx, bx
+	mov cx, ax
+    mov ah, 0Ch
+    mov al, 01h
+	int 10h
+.until(cx==20)
+;left down
+.repeat
+mov bx, cx ; (cx-c0)^2+(dx-d0)^2=r^2
+    sub bx, 100 ; cx-c0
+    mov ax, bx ; ^2
+    mul ax
+    mov bx, ax  ; bx=(cx-c0)^2
+    mov ax, 6400 ;ax=r^2
+    sub ax, bx ; ax=r^2-(cx-c0)^2=(dx-d0)^2
+    mov bx, ax ; bx=ax=r^2-(cx-c0)^2=(dx-d0)^2
+    mov si, 0
+sq4: mov ax, si
+    mul ax
+    inc si
+    cmp ax, bx
+    jbe sq4
+    ; si=sqrt (dx-d0)^2= dx-d0
+    mov dx, 100 ;  d0
+    add dx, si ; 
+    inc cx
+    mov bx, dx
+    mov ax, cx
+    mov dx, bx
+	mov cx, ax
+    mov ah, 0Ch
+    mov al, 01h
+    int 10h
+.until(cx==100)
+
 
 ClearScreen:
 	
