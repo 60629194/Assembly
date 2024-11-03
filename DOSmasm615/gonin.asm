@@ -188,6 +188,7 @@ pbl1: add dl, 30h
 	add dl, 07h
 pbl2: add dl, 30h
 	int 21h
+	ret
 printDatainBl endp
 
 printDatainBx proc
@@ -224,12 +225,14 @@ pbx3: add dl, 30h
 	add dl, 07h
 pbx4: add dl, 30h
 	int 21h
+	ret
 printDatainBx endp
 
 printEnter proc
 	mov dx, offset ent
 	mov ah, 09h
 	int 21h
+	ret
 printEnter endp
 
 end main
