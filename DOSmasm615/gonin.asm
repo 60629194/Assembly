@@ -76,6 +76,7 @@ l1:   ; cx=gcdh ;change gcdh to gcdd
 	mov ah, 09h
 	int 21h
 	
+	mov di, bx
 	mov si, cx ;printDatainBl fuction will use cl
 	call printDatainBl
 	call printEnter
@@ -91,9 +92,8 @@ l1:   ; cx=gcdh ;change gcdh to gcdd
 	
 	call printEnter
 ;gcdd in bx
+;gcdh in di
 ;calculate lcmh
-	mov di, 0
-	mov di, bx
 	pop ax
 	pop bx
 	mul bx
