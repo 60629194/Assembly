@@ -19,7 +19,6 @@ again:
 	mov ah, 09h
 	int 21h
 	
-	push bp
 	mov bp, sp
 	;new added correct input(be checked by code view)
 	mov di, 0
@@ -42,7 +41,7 @@ rr:	mov dx, 0
 	;please check this area
 	mov bl, [bp-2]
 	mov ax, 0
-	mov bl, al
+	mov al, bl
 	mov cx, 10
 	mul cx
 	add al, [bp-4]
@@ -50,7 +49,7 @@ rr:	mov dx, 0
 	
 	mov bl, [bp-8]
 	mov ax, 0
-	mov bl, al
+	mov al, bl
 	mov cx, 10
 	mul cx
 	add al, [bp-10]
