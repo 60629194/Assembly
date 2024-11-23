@@ -1,6 +1,6 @@
 # Assembly
 ## Function Documents
-To use the functions, include xxx.inc in data section.
+To use the functions, include xxx.inc in code section.
 ### trig.inc
 ***require sin table declared in data section**\
     sin1 dw 0, 87, 174, 262, 349, 436, 523, 609, 696, 782, 868, 954, 1040, 1125, 1210, 1294\
@@ -9,5 +9,5 @@ To use the functions, include xxx.inc in data section.
     sin4 dw 3597, 3657, 3716, 3774, 3830, 3886, 3940, 3993, 4045, 4096, 4145, 4193, 4240, 4286, 4330\
     sin5 dw 4373, 4415, 4455, 4494, 4532, 4568, 4603, 4636, 4668, 4698, 4728, 4755, 4782, 4806, 4830\
     sin6 dw 4851, 4872, 4891, 4908, 4924, 4938, 4951, 4963, 4973, 4981, 4988, 4993, 4997, 4999, 5000
-#### functions
+#### Functions
 - **sin** : ax = 5000 * sin(ax°) , 0 ≦ ax ≦ 360
