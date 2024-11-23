@@ -1,0 +1,1 @@
+EXTERNDEF sin1 DW
