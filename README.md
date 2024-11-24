@@ -11,3 +11,4 @@ To use the functions, include xxx.inc in code section.
     sin6 dw 4851, 4872, 4891, 4908, 4924, 4938, 4951, 4963, 4973, 4981, 4988, 4993, 4997, 4999, 5000
 #### Functions
 - **sin** : ax = 5000 * sin(ax°) , 0 ≦ ax ≦ 360
+- **cos** : ax = 5000 * cos(ax°) , 0 ≦ ax ≦ 360

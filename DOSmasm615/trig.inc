@@ -1,44 +1,86 @@
-
 sin proc 
     push bx
 
     cmp ax, 90
-    jbe Fquater
+    jbe @Fquater
     cmp ax, 180
-    jbe Squater
+    jbe @Squater
     cmp ax, 270
-    jbe Tquater
+    jbe @Tquater
 
-;Fouthquater
+;Fouth quater
     mov bx, 360
     sub bx, ax
     shl bx, 1
     mov ax, WORD PTR sin1[bx]
     neg ax
-    jmp done
+    jmp @done
 
-Fquater:
+@Fquater:
     mov bx, ax
     shl bx, 1
     mov ax, WORD PTR sin1[bx]
-    jmp done
+    jmp @done
 
-Squater:
+@Squater:
     mov bx, 180
     sub bx, ax
     shl bx, 1
     mov ax, WORD PTR sin1[bx]
-    jmp done
+    jmp @done
 
-Tquater:
-    mov bx, 180
-    sub ax, bx
+@Tquater:
+    sub ax, 180
     mov bx, ax
     shl bx, 1
     mov ax, WORD PTR sin1[bx]
     neg ax
 
-done:
+@done:
     pop bx
     ret
 sin ENDP
+
+cos PROC
+    push bx
+
+    cmp ax, 90
+    jbe @Fquater
+    cmp ax, 180
+    jbe @Squater
+    cmp ax, 270
+    jbe @Tquater
+
+;Fourth quater
+    sub ax, 270
+    mov bx, ax
+    shl bx, 1
+    mov ax, WORD PTR sin1[bx]
+    jmp @done
+
+@Fquater:
+    mov bx, 90
+    sub bx, ax
+    shl bx, 1
+    mov ax, WORD PTR sin1[bx]
+    jmp @done
+
+@Squater:
+    sub ax, 90
+    mov bx, ax
+    shl bx, 1
+    mov ax, WORD PTR sin1[bx]
+    neg ax
+    jmp @done
+
+@Tquater:
+    mov bx, 270
+    sub bx, ax
+    shl bx, 1
+    mov ax, WORD PTR sin1[bx]
+    neg ax
+
+@done:
+    pop bx
+    ret
+cos ENDP
