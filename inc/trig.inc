@@ -3,11 +3,11 @@ sin proc
     push bx
 
     cmp ax, 90
-    jbe Fquater
+    jbe @Fquater
     cmp ax, 180
-    jbe Squater
+    jbe @Squater
     cmp ax, 270
-    jbe Tquater
+    jbe @Tquater
 
 ;Fouthquater
     mov bx, 360
@@ -15,22 +15,22 @@ sin proc
     shl bx, 1
     mov ax, WORD PTR sin1[bx]
     neg ax
-    jmp done
+    jmp @done
 
-Fquater:
+@Fquater:
     mov bx, ax
     shl bx, 1
     mov ax, WORD PTR sin1[bx]
-    jmp done
+    jmp @done
 
-Squater:
+@Squater:
     mov bx, 180
     sub bx, ax
     shl bx, 1
     mov ax, WORD PTR sin1[bx]
-    jmp done
+    jmp @done
 
-Tquater:
+@Tquater:
     mov bx, 180
     sub ax, bx
     mov bx, ax
@@ -38,7 +38,7 @@ Tquater:
     mov ax, WORD PTR sin1[bx]
     neg ax
 
-done:
+@done:
     pop bx
     ret
 sin ENDP
