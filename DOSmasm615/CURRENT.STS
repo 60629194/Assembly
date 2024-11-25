@@ -1,6 +1,6 @@
 PWB-GENERATED FILE: DO NOT MODIFY
 [shared-]
-	pmark="D:\math.asm" 18 1
+	pmark="D:\cube.asm" 93 1
 	version=3
 	project=""
 	buildmode=0
@@ -112,15 +112,15 @@ PWB-GENERATED FILE: DO NOT MODIFY
     build: message "Build all" file line
 
 [debug-]
-	target="d:\math.exe"
+	target="d:\cube.exe"
 	synonym=;D:
 	memwin=vm1b DS:0 
 	memwin=vm2b DS:0 
 [cv]
 	wndstate=0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1
-	wndstate=1 67 6 1 1 1 1 0 0 0 0 0 0 0 -1
+	wndstate=1 67 6 1 1 0 1 0 0 0 0 0 0 0 -1
 	wndstate=2 34 8 33 1 0 0 0 0 0 0 0 0 0 -1
-	wndstate=3 67 23 0 7 0 1 0 0 0 17 1 0 0 -1
+	wndstate=3 67 23 0 7 1 1 0 0 0 92 83 0 0 -1
 	wndstate=4 67 9 3 12 0 0 0 0 0 0 0 0 0 -1
 	wndstate=5 67 6 0 30 0 1 0 0 0 0 0 0 0 -1
 	wndstate=6 67 6 3 33 0 1 0 0 0 0 0 0 0 -1
