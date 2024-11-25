@@ -18,6 +18,14 @@
 	sp6 dw 3 Dup(?)
 	sp7 dw 3 Dup(?)
 	sp8 dw 3 Dup(?)
+	v1 dw 3 Dup(?)
+	v2 dw 3 Dup(?)
+	v3 dw 3 Dup(?)
+	v4 dw 3 Dup(?)
+	v5 dw 3 Dup(?)
+	v6 dw 3 Dup(?)
+	v7 dw 3 Dup(?)
+	v8 dw 3 Dup(?)
 	thetax dw 0
 	thetaz dw 0
 	rx dw 1, 0, 0, 0, 1, 0, 0, 0, 1
@@ -25,6 +33,8 @@
     Pp dw 320, 0, 240 ;front of center of the screen
 	scr dw 500 ;y coordinate
 .code
+#include trig.inc
+#include math.inc
 main PROC
     ;catch input
     mov ax, @data
@@ -75,7 +85,8 @@ ipt:
 		inc word ptr thetaz
         jmp cal
 		
-cal: 
+cal:
+;refresh rx, rz
 	mov ax, thetax
 	call cos
 	mov rx[4], ax
@@ -89,9 +100,8 @@ cal:
 	neg ax
 	mov rx[5], ax
 	mov rz[1], ax
-	; rx, rz refreshed
 
-	
+;Qn=Qn-Qc
 	mov ax, Qc[0]
 	sub word ptr Q1[0], ax
 	mov ax, Qc[1]
@@ -147,16 +157,13 @@ cal:
 	sub word ptr Q8[1], ax
 	mov ax, Qc[2]
 	sub word ptr Q8[2], ax
-	;Qn-Qc
-	
-	;;;;rxQ1
-	;
+
+;rxQ1
 	mov ax, rx[4]
 	mov dx, Q1[1]
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rx[5]
 	mov dx, Q1[2]
 	imul dx
@@ -169,22 +176,18 @@ cal:
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rx[8]
 	mov dx, Q1[2]
 	imul dx
 	call EXadd
 	idiv 5000
 	mov Q1[2], ax
-	;
-	
-	;;;;rzQ1
+;rzQ1
 	mov ax, rz[0]
 	mov dx, Q1[0]
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rz[1]
 	mov dx, Q1[1]
 	imul dx
@@ -197,23 +200,19 @@ cal:
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rz[4]
 	mov dx, Q1[1]
 	imul dx
 	call EXadd
 	idiv 5000
 	mov Q1[1], ax
-	;
-	
-	;;;;rxQ2
-	;
+
+;rxQ2
 	mov ax, rx[4]
 	mov dx, Q2[1]
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rx[5]
 	mov dx, Q2[2]
 	imul dx
@@ -226,22 +225,18 @@ cal:
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rx[8]
 	mov dx, Q2[2]
 	imul dx
 	call EXadd
 	idiv 5000
 	mov Q2[2], ax
-	;
-	
-	;;;;rzQ2
+;rzQ2
 	mov ax, rz[0]
 	mov dx, Q2[0]
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rz[1]
 	mov dx, Q2[1]
 	imul dx
@@ -254,23 +249,19 @@ cal:
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rz[4]
 	mov dx, Q2[1]
 	imul dx
 	call EXadd
 	idiv 5000
 	mov Q2[1], ax
-	;
-	
-	;;;;rxQ3
-	;
+
+;rxQ3
 	mov ax, rx[4]
 	mov dx, Q3[1]
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rx[5]
 	mov dx, Q3[2]
 	imul dx
@@ -283,22 +274,18 @@ cal:
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rx[8]
 	mov dx, Q3[2]
 	imul dx
 	call EXadd
 	idiv 5000
 	mov Q3[2], ax
-	;
-	
-	;;;;rzQ3
+;rzQ3
 	mov ax, rz[0]
 	mov dx, Q3[0]
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rz[1]
 	mov dx, Q3[1]
 	imul dx
@@ -311,23 +298,19 @@ cal:
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rz[4]
 	mov dx, Q3[1]
 	imul dx
 	call EXadd
 	idiv 5000
 	mov Q3[1], ax
-	;
-	
-	;;;;rxQ4
-	;
+
+;rxQ4
 	mov ax, rx[4]
 	mov dx, Q4[1]
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rx[5]
 	mov dx, Q4[2]
 	imul dx
@@ -340,22 +323,18 @@ cal:
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rx[8]
 	mov dx, Q4[2]
 	imul dx
 	call EXadd
 	idiv 5000
 	mov Q4[2], ax
-	;
-	
-	;;;;rzQ4
+;rzQ4
 	mov ax, rz[0]
 	mov dx, Q4[0]
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rz[1]
 	mov dx, Q4[1]
 	imul dx
@@ -368,23 +347,19 @@ cal:
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rz[4]
 	mov dx, Q4[1]
 	imul dx
 	call EXadd
 	idiv 5000
 	mov Q4[1], ax
-	;
 	
-	;;;;rxQ5
-	;
+;rxQ5
 	mov ax, rx[4]
 	mov dx, Q5[1]
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rx[5]
 	mov dx, Q5[2]
 	imul dx
@@ -397,22 +372,18 @@ cal:
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rx[8]
 	mov dx, Q5[2]
 	imul dx
 	call EXadd
 	idiv 5000
 	mov Q5[2], ax
-	;
-	
-	;;;;rzQ5
+;rzQ5
 	mov ax, rz[0]
 	mov dx, Q5[0]
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rz[1]
 	mov dx, Q5[1]
 	imul dx
@@ -425,22 +396,19 @@ cal:
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rz[4]
 	mov dx, Q5[1]
 	imul dx
 	call EXadd
 	idiv 5000
 	mov Q5[1], ax
-	;
-	;;;;rxQ6
-	;
+
+;rxQ6
 	mov ax, rx[4]
 	mov dx, Q6[1]
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rx[5]
 	mov dx, Q6[2]
 	imul dx
@@ -453,22 +421,18 @@ cal:
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rx[8]
 	mov dx, Q6[2]
 	imul dx
 	call EXadd
 	idiv 5000
 	mov Q6[2], ax
-	;
-	
-	;;;;rzQ6
+;rzQ6
 	mov ax, rz[0]
 	mov dx, Q6[0]
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rz[1]
 	mov dx, Q6[1]
 	imul dx
@@ -481,23 +445,19 @@ cal:
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rz[4]
 	mov dx, Q6[1]
 	imul dx
 	call EXadd
 	idiv 5000
 	mov Q6[1], ax
-	;
-	
-	;;;;rxQ7
-	;
+
+;rxQ7
 	mov ax, rx[4]
 	mov dx, Q7[1]
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rx[5]
 	mov dx, Q7[2]
 	imul dx
@@ -510,22 +470,18 @@ cal:
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rx[8]
 	mov dx, Q7[2]
 	imul dx
 	call EXadd
 	idiv 5000
-	mov Q7[2], ax
-	;
-	
-	;;;;rzQ7
+	mov Q7[2], ax	
+;rzQ7
 	mov ax, rz[0]
 	mov dx, Q7[0]
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rz[1]
 	mov dx, Q7[1]
 	imul dx
@@ -538,23 +494,19 @@ cal:
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rz[4]
 	mov dx, Q7[1]
 	imul dx
 	call EXadd
 	idiv 5000
 	mov Q7[1], ax
-	;
-	
-	;;;;rxQ8
-	;
+
+;rxQ8
 	mov ax, rx[4]
 	mov dx, Q8[1]
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rx[5]
 	mov dx, Q8[2]
 	imul dx
@@ -567,22 +519,18 @@ cal:
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rx[8]
 	mov dx, Q8[2]
 	imul dx
 	call EXadd
 	idiv 5000
 	mov Q8[2], ax
-	;
-	
-	;;;;rzQ8
+;rzQ8
 	mov ax, rz[0]
 	mov dx, Q8[0]
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rz[1]
 	mov dx, Q8[1]
 	imul dx
@@ -595,14 +543,72 @@ cal:
 	imul dx
 	mov bx, dx
 	mov cx, ax
-	;
 	mov ax, rz[4]
 	mov dx, Q8[1]
 	imul dx
 	call EXadd
 	idiv 5000
 	mov Q8[1], ax
-	;
+	
+;Qn=Qn+Qc
+	mov ax, Qc[0]
+	add word ptr Q1[0], ax
+	mov ax, Qc[1]
+	add word ptr Q1[1], ax
+	mov ax, Qc[2]
+	add word ptr Q1[2], ax
+	
+	mov ax, Qc[0]
+	add word ptr Q2[0], ax
+	mov ax, Qc[1]
+	add word ptr Q2[1], ax
+	mov ax, Qc[2]
+	add word ptr Q2[2], ax
+	
+	mov ax, Qc[0]
+	add word ptr Q3[0], ax
+	mov ax, Qc[1]
+	add word ptr Q3[1], ax
+	mov ax, Qc[2]
+	add word ptr Q3[2], ax
+	
+	mov ax, Qc[0]
+	add word ptr Q4[0], ax
+	mov ax, Qc[1]
+	add word ptr Q4[1], ax
+	mov ax, Qc[2]
+	add word ptr Q4[2], ax
+	
+	mov ax, Qc[0]
+	add word ptr Q5[0], ax
+	mov ax, Qc[1]
+	add word ptr Q5[1], ax
+	mov ax, Qc[2]
+	add word ptr Q5[2], ax
+	
+	mov ax, Qc[0]
+	add word ptr Q6[0], ax
+	mov ax, Qc[1]
+	add word ptr Q6[1], ax
+	mov ax, Qc[2]
+	add word ptr Q6[2], ax
+	
+	mov ax, Qc[0]
+	add word ptr Q7[0], ax
+	mov ax, Qc[1]
+	add word ptr Q7[1], ax
+	mov ax, Qc[2]
+	add word ptr Q7[2], ax
+	
+	mov ax, Qc[0]
+	add word ptr Q8[0], ax
+	mov ax, Qc[1]
+	add word ptr Q8[1], ax
+	mov ax, Qc[2]
+	add word ptr Q8[2], ax
+
+
+
         ;point to point vecter construct a parametric eq
         ;plane function(find eq which y=plane's y) to get point 
 
