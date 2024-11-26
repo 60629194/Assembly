@@ -26,8 +26,8 @@
 	v6 dw 3 Dup(?)
 	v7 dw 3 Dup(?)
 	v8 dw 3 Dup(?)
-	thetax dw 0
-	thetaz dw 0
+	thetax dw 41
+	thetaz dw 50
 	rx dw 1, 0, 0, 0, 1, 0, 0, 0, 1
 	rz dw 1, 0, 0, 0, 1, 0, 0, 0, 1
     Pp dw 320, 0, 240 ;front of center of the screen
@@ -92,14 +92,19 @@ cal:
 	call cos
 	mov rx[8], ax
 	mov rx[16], ax
+	mov ax, thetaz
+	call cos
 	mov rz[0], ax
 	mov rz[8], ax
 	mov ax, thetax
 	call sin
 	mov rx[14], ax
-	mov rz[6], ax
 	neg ax
 	mov rx[10], ax
+	mov ax, thetaz
+	call sin
+	mov rz[6], ax
+	neg ax
 	mov rz[2], ax
 
 ;Qn=Qn-Qc
