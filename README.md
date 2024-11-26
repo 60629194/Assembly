@@ -20,4 +20,6 @@ To use the functions, include xxx.inc in code section.
 #### Functions
 
 - **EXadd** : DX:AX = DX:AX + BX:CX
-- **round** : BX = quotient, use after div instruction (<span style="color:red">UNTESTED</span>)
+- **round** : use after div instruction. \
+  Orginal: BX = devisor AX = quotient, DX = remainder\
+  Modified: AX = round(DX:AX/BX), DX = remainder
