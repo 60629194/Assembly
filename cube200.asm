@@ -11,6 +11,15 @@
     Q6 dw -240,  240, -240 ;-+-
     Q7 dw  240, -240, -240  ;+--
     Q8 dw -240, -240, -240  ;---
+	;cube for projection
+	P1 dw 3 Dup(?)
+	P2 dw 3 Dup(?)
+	P3 dw 3 Dup(?)
+	P4 dw 3 Dup(?)
+	P5 dw 3 Dup(?)
+	P6 dw 3 Dup(?)
+	P7 dw 3 Dup(?)
+	P8 dw 3 Dup(?)
 	;trig
 	sin1 dw 459 ; sin(1)*26300
 	nsin1 dw -459 ; -sin(1)*26300
@@ -71,6 +80,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q1[2]
@@ -84,6 +94,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q1[4], ax
 		pop ax
 		mov Q1[2], ax
@@ -99,6 +110,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q2[2]
@@ -112,6 +124,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q2[4], ax
 		pop ax
 		mov Q2[2], ax
@@ -127,6 +140,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q3[2]
@@ -140,6 +154,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q3[4], ax
 		pop ax
 		mov Q3[2], ax
@@ -155,6 +170,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q4[2]
@@ -168,6 +184,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q4[4], ax
 		pop ax
 		mov Q4[2], ax
@@ -183,6 +200,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q5[2]
@@ -196,6 +214,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q5[4], ax
 		pop ax
 		mov Q5[2], ax
@@ -211,6 +230,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q6[2]
@@ -224,6 +244,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q6[4], ax
 		pop ax
 		mov Q6[2], ax
@@ -239,6 +260,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q7[2]
@@ -252,6 +274,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q7[4], ax
 		pop ax
 		mov Q7[2], ax
@@ -267,6 +290,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q8[2]
@@ -280,6 +304,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q8[4], ax
 		pop ax
 		mov Q8[2], ax
@@ -327,6 +352,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q2[2]
@@ -340,6 +366,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q2[4], ax
 		pop ax
 		mov Q2[2], ax
@@ -355,6 +382,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q3[2]
@@ -368,6 +396,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q3[4], ax
 		pop ax
 		mov Q3[2], ax
@@ -383,6 +412,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q4[2]
@@ -396,6 +426,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q4[4], ax
 		pop ax
 		mov Q4[2], ax
@@ -411,6 +442,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q5[2]
@@ -424,6 +456,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q5[4], ax
 		pop ax
 		mov Q5[2], ax
@@ -439,6 +472,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q6[2]
@@ -452,6 +486,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q6[4], ax
 		pop ax
 		mov Q6[2], ax
@@ -467,6 +502,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q7[2]
@@ -480,6 +516,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q7[4], ax
 		pop ax
 		mov Q7[2], ax
@@ -495,6 +532,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q8[2]
@@ -508,6 +546,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q8[4], ax
 		pop ax
 		mov Q8[2], ax
@@ -525,6 +564,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q1[0]
@@ -538,6 +578,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q1[2], ax
 		pop ax
 		mov Q1[0], ax
@@ -553,6 +594,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q2[0]
@@ -566,6 +608,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q2[2], ax
 		pop ax
 		mov Q2[0], ax
@@ -581,6 +624,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q3[0]
@@ -594,6 +638,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q3[2], ax
 		pop ax
 		mov Q3[0], ax
@@ -609,6 +654,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q4[0]
@@ -622,6 +668,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q4[2], ax
 		pop ax
 		mov Q4[0], ax		
@@ -637,6 +684,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q5[0]
@@ -650,6 +698,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q5[2], ax
 		pop ax
 		mov Q5[0], ax		
@@ -665,6 +714,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q6[0]
@@ -678,6 +728,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q6[2], ax
 		pop ax
 		mov Q6[0], ax		
@@ -693,6 +744,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q7[0]
@@ -706,6 +758,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q7[2], ax
 		pop ax
 		mov Q7[0], ax		
@@ -734,6 +787,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q8[2], ax
 		pop ax
 		mov Q8[0], ax		
@@ -751,6 +805,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q1[0]
@@ -764,6 +819,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q1[2], ax
 		pop ax
 		mov Q1[0], ax
@@ -779,6 +835,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q2[0]
@@ -792,6 +849,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q2[2], ax
 		pop ax
 		mov Q2[0], ax
@@ -807,6 +865,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q3[0]
@@ -820,6 +879,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q3[2], ax
 		pop ax
 		mov Q3[0], ax
@@ -835,6 +895,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q4[0]
@@ -848,6 +909,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q4[2], ax
 		pop ax
 		mov Q4[0], ax		
@@ -863,6 +925,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q5[0]
@@ -876,6 +939,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q5[2], ax
 		pop ax
 		mov Q5[0], ax		
@@ -891,6 +955,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q6[0]
@@ -904,6 +969,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q6[2], ax
 		pop ax
 		mov Q6[0], ax		
@@ -919,6 +985,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q7[0]
@@ -932,6 +999,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q7[2], ax
 		pop ax
 		mov Q7[0], ax		
@@ -947,6 +1015,7 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		push ax
 		
 		mov ax, Q8[0]
@@ -960,126 +1029,119 @@ main PROC
 		call EXadd
 		mov bx, 26300
 		idiv bx
+		call round
 		mov Q8[2], ax
 		pop ax
 		mov Q8[0], ax		
 		
         jmp cal
 cal:
-	;Qn+Qc
+	;Qn+Qc=Pn
 	mov ax, Qc[0]
-	add word ptr Q1[0], ax
+	mov bx, Q1[0]
+	mov P1[0], bx
+	add word ptr P1[0], ax
 	mov ax, Qc[2]
-	add word ptr Q1[2], ax
+	mov bx, Q1[2]
+	mov P1[2], bx
+	add word ptr P1[2], ax
 	mov ax, Qc[4]
-	add word ptr Q1[4], ax
+	mov bx, Q1[4]
+	mov P1[4], bx
+	add word ptr P1[4], ax
 	
 	mov ax, Qc[0]
-	add word ptr Q2[0], ax
+	mov bx, Q2[0]
+	mov P2[0], bx
+	add word ptr P2[0], ax
 	mov ax, Qc[2]
-	add word ptr Q2[2], ax
+	mov bx, Q2[2]
+	mov P2[2], bx
+	add word ptr P2[2], ax
 	mov ax, Qc[4]
-	add word ptr Q2[4], ax
+	mov bx, Q2[4]
+	mov P2[4], bx
+	add word ptr P2[4], ax
 	
 	mov ax, Qc[0]
-	add word ptr Q3[0], ax
+	mov bx, Q3[0]
+	mov P3[0], bx
+	add word ptr P3[0], ax
 	mov ax, Qc[2]
-	add word ptr Q3[2], ax
+	mov bx, Q3[2]
+	mov P3[2], bx
+	add word ptr P3[2], ax
 	mov ax, Qc[4]
-	add word ptr Q3[4], ax
+	mov bx, Q3[4]
+	mov P3[4], bx
+	add word ptr P3[4], ax
 	
 	mov ax, Qc[0]
-	add word ptr Q4[0], ax
+	mov bx, Q4[0]
+	mov P4[0], bx
+	add word ptr P4[0], ax
 	mov ax, Qc[2]
-	add word ptr Q4[2], ax
+	mov bx, Q4[2]
+	mov P4[2], bx
+	add word ptr P4[2], ax
 	mov ax, Qc[4]
-	add word ptr Q4[4], ax
+	mov bx, Q4[4]
+	mov P4[4], bx
+	add word ptr P4[4], ax
 	
 	mov ax, Qc[0]
-	add word ptr Q5[0], ax
+	mov bx, Q5[0]
+	mov P5[0], bx
+	add word ptr P5[0], ax
 	mov ax, Qc[2]
-	add word ptr Q5[2], ax
+	mov bx, Q5[2]
+	mov P5[2], bx
+	add word ptr P5[2], ax
 	mov ax, Qc[4]
-	add word ptr Q5[4], ax
+	mov bx, Q5[4]
+	mov P5[4], bx
+	add word ptr P5[4], ax
 	
 	mov ax, Qc[0]
-	add word ptr Q6[0], ax
+	mov bx, Q6[0]
+	mov P6[0], bx
+	add word ptr P6[0], ax
 	mov ax, Qc[2]
-	add word ptr Q6[2], ax
+	mov bx, Q6[2]
+	mov P6[2], bx
+	add word ptr P6[2], ax
 	mov ax, Qc[4]
-	add word ptr Q6[4], ax
+	mov bx, Q6[4]
+	mov P6[4], bx
+	add word ptr P6[4], ax
 	
 	mov ax, Qc[0]
-	add word ptr Q7[0], ax
+	mov bx, Q7[0]
+	mov P7[0], bx
+	add word ptr P7[0], ax
 	mov ax, Qc[2]
-	add word ptr Q7[2], ax
+	mov bx, Q7[2]
+	mov P7[2], bx
+	add word ptr P7[2], ax
 	mov ax, Qc[4]
-	add word ptr Q7[4], ax
+	mov bx, Q7[4]
+	mov P7[4], bx
+	add word ptr P7[4], ax
 	
 	mov ax, Qc[0]
-	add word ptr Q8[0], ax
+	mov bx, Q8[0]
+	mov P8[0], bx
+	add word ptr P8[0], ax
 	mov ax, Qc[2]
-	add word ptr Q8[2], ax
+	mov bx, Q8[2]
+	mov P8[2], bx
+	add word ptr P8[2], ax
 	mov ax, Qc[4]
-	add word ptr Q8[4], ax
-	
+	mov bx, Q8[4]
+	mov P8[4], bx
+	add word ptr P8[4], ax
 	;project here
-	;;;after projection need to minus Qc get backspin
-	mov ax, Qc[0]
-	sub word ptr Q1[0], ax
-	mov ax, Qc[2]
-	sub word ptr Q1[2], ax
-	mov ax, Qc[4]
-	sub word ptr Q1[4], ax
 	
-	mov ax, Qc[0]
-	sub word ptr Q2[0], ax
-	mov ax, Qc[2]
-	sub word ptr Q2[2], ax
-	mov ax, Qc[4]
-	sub word ptr Q2[4], ax
-	
-	mov ax, Qc[0]
-	sub word ptr Q3[0], ax
-	mov ax, Qc[2]
-	sub word ptr Q3[2], ax
-	mov ax, Qc[4]
-	sub word ptr Q3[4], ax
-	
-	mov ax, Qc[0]
-	sub word ptr Q4[0], ax
-	mov ax, Qc[2]
-	sub word ptr Q4[2], ax
-	mov ax, Qc[4]
-	sub word ptr Q4[4], ax
-	
-	mov ax, Qc[0]
-	sub word ptr Q5[0], ax
-	mov ax, Qc[2]
-	sub word ptr Q5[2], ax
-	mov ax, Qc[4]
-	sub word ptr Q5[4], ax
-	
-	mov ax, Qc[0]
-	sub word ptr Q6[0], ax
-	mov ax, Qc[2]
-	sub word ptr Q6[2], ax
-	mov ax, Qc[4]
-	sub word ptr Q6[4], ax
-	
-	mov ax, Qc[0]
-	sub word ptr Q7[0], ax
-	mov ax, Qc[2]
-	sub word ptr Q7[2], ax
-	mov ax, Qc[4]
-	sub word ptr Q7[4], ax
-	
-	mov ax, Qc[0]
-	sub word ptr Q8[0], ax
-	mov ax, Qc[2]
-	sub word ptr Q8[2], ax
-	mov ax, Qc[4]
-	sub word ptr Q8[4], ax
 gra:
     ;show proj
     mov ax, 11h ;graphic mode
