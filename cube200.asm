@@ -1161,23 +1161,23 @@ cal:
 	mov bx, v1[2]
 	idiv bx  
 	call round
-	mov bx, ax  ;bx=t*num
+	mov cx, ax  ;cx=t*num
 	
 	mov ax, v1[0]
-	imul bx
-	mov cx, 100
-	idiv cx
+	imul cx
+	mov bx, 100
+	idiv bx
 	call round
-	add cx, Pp[0]
-	mov sp1[0], cx
+	add ax, Pp[0]
+	mov sp1[0], ax
 	
 	mov ax, v1[4]
-	imul bx
-	mov cx, 100
-	idiv cx
+	imul cx
+	mov bx, 100
+	idiv bx
 	call round
-	add cx, Pp[4]
-	mov sp1[2], cx
+	add ax, Pp[4]
+	mov sp1[2], ax
 	
 	;;;
 	
