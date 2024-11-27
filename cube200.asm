@@ -60,20 +60,1026 @@ main PROC
 
 	topspin:
 		;spin here
+		mov ax, Q1[2]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q1[4]
+		mov dx, sin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q1[2]
+		mov dx, nsin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q1[4]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q1[4], ax
+		pop ax
+		mov Q1[2], ax
+		;;;
+		mov ax, Q2[2]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q2[4]
+		mov dx, sin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q2[2]
+		mov dx, nsin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q2[4]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q2[4], ax
+		pop ax
+		mov Q2[2], ax
+		;;;
+		mov ax, Q3[2]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q3[4]
+		mov dx, sin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q3[2]
+		mov dx, nsin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q3[4]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q3[4], ax
+		pop ax
+		mov Q3[2], ax
+		;;;
+		mov ax, Q4[2]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q4[4]
+		mov dx, sin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q4[2]
+		mov dx, nsin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q4[4]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q4[4], ax
+		pop ax
+		mov Q4[2], ax
+		;;;
+		mov ax, Q5[2]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q5[4]
+		mov dx, sin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q5[2]
+		mov dx, nsin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q5[4]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q5[4], ax
+		pop ax
+		mov Q5[2], ax
+		;;;
+		mov ax, Q6[2]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q6[4]
+		mov dx, sin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q6[2]
+		mov dx, nsin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q6[4]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q6[4], ax
+		pop ax
+		mov Q6[2], ax
+		;;;
+		mov ax, Q7[2]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q7[4]
+		mov dx, sin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q7[2]
+		mov dx, nsin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q7[4]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q7[4], ax
+		pop ax
+		mov Q7[2], ax
+		;;
+		mov ax, Q8[2]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q8[4]
+		mov dx, sin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q8[2]
+		mov dx, nsin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q8[4]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q8[4], ax
+		pop ax
+		mov Q8[2], ax
+		
         jmp cal
     backspin:
-
+		mov ax, Q1[2]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q1[4]
+		mov dx, nsin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		call round
+		push ax
+		
+		mov ax, Q1[2]
+		mov dx, sin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q1[4]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		call round
+		mov Q1[4], ax
+		pop ax
+		mov Q1[2], ax
+		;;;
+		mov ax, Q2[2]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q2[4]
+		mov dx, nsin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q2[2]
+		mov dx, sin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q2[4]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q2[4], ax
+		pop ax
+		mov Q2[2], ax
+		;;;
+		mov ax, Q3[2]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q3[4]
+		mov dx, nsin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q3[2]
+		mov dx, sin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q3[4]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q3[4], ax
+		pop ax
+		mov Q3[2], ax
+		;;;
+		mov ax, Q4[2]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q4[4]
+		mov dx, nsin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q4[2]
+		mov dx, sin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q4[4]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q4[4], ax
+		pop ax
+		mov Q4[2], ax
+		;;;
+		mov ax, Q5[2]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q5[4]
+		mov dx, nsin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q5[2]
+		mov dx, sin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q5[4]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q5[4], ax
+		pop ax
+		mov Q5[2], ax
+		;;;
+		mov ax, Q6[2]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q6[4]
+		mov dx, nsin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q6[2]
+		mov dx, sin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q6[4]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q6[4], ax
+		pop ax
+		mov Q6[2], ax
+		;;;
+		mov ax, Q7[2]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q7[4]
+		mov dx, nsin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q7[2]
+		mov dx, sin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q7[4]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q7[4], ax
+		pop ax
+		mov Q7[2], ax
+		;;;
+		mov ax, Q8[2]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q8[4]
+		mov dx, nsin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q8[2]
+		mov dx, sin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q8[4]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q8[4], ax
+		pop ax
+		mov Q8[2], ax
+		
         jmp cal
     clockwise:
-
+		mov ax, Q1[0]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q1[2]
+		mov dx, sin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q1[0]
+		mov dx, nsin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q1[2]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q1[2], ax
+		pop ax
+		mov Q1[0], ax
+		;;;
+		mov ax, Q2[0]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q2[2]
+		mov dx, sin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q2[0]
+		mov dx, nsin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q2[2]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q2[2], ax
+		pop ax
+		mov Q2[0], ax
+		;;;
+		mov ax, Q3[0]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q3[2]
+		mov dx, sin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q3[0]
+		mov dx, nsin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q3[2]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q3[2], ax
+		pop ax
+		mov Q3[0], ax
+		;;;
+		mov ax, Q4[0]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q4[2]
+		mov dx, sin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q4[0]
+		mov dx, nsin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q4[2]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q4[2], ax
+		pop ax
+		mov Q4[0], ax		
+		;;;
+		mov ax, Q5[0]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q5[2]
+		mov dx, sin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q5[0]
+		mov dx, nsin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q5[2]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q5[2], ax
+		pop ax
+		mov Q5[0], ax		
+		;;;
+		mov ax, Q6[0]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q6[2]
+		mov dx, sin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q6[0]
+		mov dx, nsin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q6[2]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q6[2], ax
+		pop ax
+		mov Q6[0], ax		
+		;;;
+		mov ax, Q7[0]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q7[2]
+		mov dx, sin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q7[0]
+		mov dx, nsin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q7[2]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q7[2], ax
+		pop ax
+		mov Q7[0], ax		
+		;;;
+		mov ax, Q8[0]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q8[2]
+		mov dx, sin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q8[0]
+		mov dx, nsin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q8[2]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q8[2], ax
+		pop ax
+		mov Q8[0], ax		
+		
         jmp cal
     counterclockwise:
-
+		mov ax, Q1[0]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q1[2]
+		mov dx, nsin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q1[0]
+		mov dx, sin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q1[2]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q1[2], ax
+		pop ax
+		mov Q1[0], ax
+		;;;
+		mov ax, Q2[0]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q2[2]
+		mov dx, nsin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q2[0]
+		mov dx, sin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q2[2]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q2[2], ax
+		pop ax
+		mov Q2[0], ax
+		;;;
+		mov ax, Q3[0]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q3[2]
+		mov dx, nsin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q3[0]
+		mov dx, sin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q3[2]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q3[2], ax
+		pop ax
+		mov Q3[0], ax
+		;;;
+		mov ax, Q4[0]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q4[2]
+		mov dx, nsin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q4[0]
+		mov dx, sin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q4[2]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q4[2], ax
+		pop ax
+		mov Q4[0], ax		
+		;;;
+		mov ax, Q5[0]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q5[2]
+		mov dx, nsin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q5[0]
+		mov dx, sin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q5[2]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q5[2], ax
+		pop ax
+		mov Q5[0], ax		
+		;;;
+		mov ax, Q6[0]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q6[2]
+		mov dx, nsin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q6[0]
+		mov dx, sin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q6[2]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q6[2], ax
+		pop ax
+		mov Q6[0], ax		
+		;;;
+		mov ax, Q7[0]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q7[2]
+		mov dx, nsin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q7[0]
+		mov dx, sin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q7[2]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q7[2], ax
+		pop ax
+		mov Q7[0], ax		
+		;;;
+		mov ax, Q8[0]
+		mov dx, cos1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q8[2]
+		mov dx, nsin1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		push ax
+		
+		mov ax, Q8[0]
+		mov dx, sin1
+		imul dx
+		mov bx, dx
+		mov cx, ax
+		mov ax, Q8[2]
+		mov dx, cos1
+		imul dx
+		call EXadd
+		mov bx, 26300
+		idiv bx
+		mov Q8[2], ax
+		pop ax
+		mov Q8[0], ax		
+		
         jmp cal
-
 cal:
+	;Qn+Qc
+	mov ax, Qc[0]
+	add word ptr Q1[0], ax
+	mov ax, Qc[2]
+	add word ptr Q1[2], ax
+	mov ax, Qc[4]
+	add word ptr Q1[4], ax
+	
+	mov ax, Qc[0]
+	add word ptr Q2[0], ax
+	mov ax, Qc[2]
+	add word ptr Q2[2], ax
+	mov ax, Qc[4]
+	add word ptr Q2[4], ax
+	
+	mov ax, Qc[0]
+	add word ptr Q3[0], ax
+	mov ax, Qc[2]
+	add word ptr Q3[2], ax
+	mov ax, Qc[4]
+	add word ptr Q3[4], ax
+	
+	mov ax, Qc[0]
+	add word ptr Q4[0], ax
+	mov ax, Qc[2]
+	add word ptr Q4[2], ax
+	mov ax, Qc[4]
+	add word ptr Q4[4], ax
+	
+	mov ax, Qc[0]
+	add word ptr Q5[0], ax
+	mov ax, Qc[2]
+	add word ptr Q5[2], ax
+	mov ax, Qc[4]
+	add word ptr Q5[4], ax
+	
+	mov ax, Qc[0]
+	add word ptr Q6[0], ax
+	mov ax, Qc[2]
+	add word ptr Q6[2], ax
+	mov ax, Qc[4]
+	add word ptr Q6[4], ax
+	
+	mov ax, Qc[0]
+	add word ptr Q7[0], ax
+	mov ax, Qc[2]
+	add word ptr Q7[2], ax
+	mov ax, Qc[4]
+	add word ptr Q7[4], ax
+	
+	mov ax, Qc[0]
+	add word ptr Q8[0], ax
+	mov ax, Qc[2]
+	add word ptr Q8[2], ax
+	mov ax, Qc[4]
+	add word ptr Q8[4], ax
+	
 	;project here
-
+	;;;after projection need to minus Qc get backspin
+	mov ax, Qc[0]
+	sub word ptr Q1[0], ax
+	mov ax, Qc[2]
+	sub word ptr Q1[2], ax
+	mov ax, Qc[4]
+	sub word ptr Q1[4], ax
+	
+	mov ax, Qc[0]
+	sub word ptr Q2[0], ax
+	mov ax, Qc[2]
+	sub word ptr Q2[2], ax
+	mov ax, Qc[4]
+	sub word ptr Q2[4], ax
+	
+	mov ax, Qc[0]
+	sub word ptr Q3[0], ax
+	mov ax, Qc[2]
+	sub word ptr Q3[2], ax
+	mov ax, Qc[4]
+	sub word ptr Q3[4], ax
+	
+	mov ax, Qc[0]
+	sub word ptr Q4[0], ax
+	mov ax, Qc[2]
+	sub word ptr Q4[2], ax
+	mov ax, Qc[4]
+	sub word ptr Q4[4], ax
+	
+	mov ax, Qc[0]
+	sub word ptr Q5[0], ax
+	mov ax, Qc[2]
+	sub word ptr Q5[2], ax
+	mov ax, Qc[4]
+	sub word ptr Q5[4], ax
+	
+	mov ax, Qc[0]
+	sub word ptr Q6[0], ax
+	mov ax, Qc[2]
+	sub word ptr Q6[2], ax
+	mov ax, Qc[4]
+	sub word ptr Q6[4], ax
+	
+	mov ax, Qc[0]
+	sub word ptr Q7[0], ax
+	mov ax, Qc[2]
+	sub word ptr Q7[2], ax
+	mov ax, Qc[4]
+	sub word ptr Q7[4], ax
+	
+	mov ax, Qc[0]
+	sub word ptr Q8[0], ax
+	mov ax, Qc[2]
+	sub word ptr Q8[2], ax
+	mov ax, Qc[4]
+	sub word ptr Q8[4], ax
 gra:
     ;show proj
     mov ax, 11h ;graphic mode
