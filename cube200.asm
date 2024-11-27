@@ -1158,7 +1158,7 @@ cal:
 	mov ax, scr
 	mov bx, 100 ; number which can discuss
 	imul bx
-	mov bx, v2[2]
+	mov bx, v1[2]
 	idiv bx  
 	call round
 	mov bx, ax  ;bx=t*num
