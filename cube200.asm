@@ -34,14 +34,14 @@
 	v7 dw 3 Dup(?)
 	v8 dw 3 Dup(?)
 	;projection on screen
-	sp1 dw 3 Dup(?) 
-    sp2 dw 3 Dup(?)
-    sp3 dw 3 Dup(?)
-    sp4 dw 3 Dup(?)
-	sp5 dw 3 Dup(?)
-	sp6 dw 3 Dup(?)
-	sp7 dw 3 Dup(?)
-	sp8 dw 3 Dup(?)
+	sp1 dw 2 Dup(?) 
+    sp2 dw 2 Dup(?)
+    sp3 dw 2 Dup(?)
+    sp4 dw 2 Dup(?)
+	sp5 dw 2 Dup(?)
+	sp6 dw 2 Dup(?)
+	sp7 dw 2 Dup(?)
+	sp8 dw 2 Dup(?)
 
 	Pp dw 320, 0, 240 ;perspective point
 
@@ -1140,7 +1140,51 @@ cal:
 	mov bx, Q8[4]
 	mov P8[4], bx
 	add word ptr P8[4], ax
+	
+	
 	;project here
+	
+	mov ax, P1[0]
+	sub ax, Pp[0]
+	mov v1[0], ax
+	mov ax, P1[2]
+	sub ax, Pp[2]
+	mov v1[2], ax
+	mov ax, P1[4]
+	sub ax, Pp[4]
+	mov v1[4], ax
+	
+	xor dx, dx
+	mov ax, scr
+	mov bx, 100 ; number which can discuss
+	imul bx
+	mov bx, v2[2]
+	idiv bx  
+	call round
+	mov bx, ax  ;bx=t*num
+	
+	mov ax, v1[0]
+	imul bx
+	mov cx, 100
+	idiv cx
+	call round
+	add cx, Pp[0]
+	mov sp1[0], cx
+	
+	mov ax, v1[4]
+	imul bx
+	mov cx, 100
+	idiv cx
+	call round
+	add cx, Pp[4]
+	mov sp1[2], cx
+	
+	;;;
+	
+	
+	
+	
+	
 	
 gra:
     ;show proj
