@@ -1150,7 +1150,7 @@ cal:
 	
 	xor dx, dx
 	mov ax, scr
-	mov bx, 202 ; number which can discuss
+	mov bx, 250 ; number which can discuss
 	imul bx
 	mov bx, vp[2]
 	idiv bx  
@@ -1161,7 +1161,7 @@ cal:
 	
 	mov cx, vp[0]
 	imul cx
-	mov bx, 202
+	mov bx, 250
 	idiv bx
 	call round
 	add ax, Pp[0]
@@ -1171,7 +1171,7 @@ cal:
 	pop dx
 	mov cx, vp[4]
 	imul cx
-	mov bx, 202
+	mov bx, 250
 	idiv bx
 	call round
 	add ax, Pp[4]
@@ -1189,7 +1189,7 @@ cal:
 	
 	xor dx, dx
 	mov ax, scr
-	mov bx, 202 ; number which can discuss
+	mov bx, 250 ; number which can discuss
 	imul bx
 	mov bx, vp[2]
 	idiv bx  
@@ -1200,7 +1200,7 @@ cal:
 	
 	mov cx, vp[0]
 	imul cx
-	mov bx, 202
+	mov bx, 250
 	idiv bx
 	call round
 	add ax, Pp[0]
@@ -1210,7 +1210,7 @@ cal:
 	pop dx
 	mov cx, vp[4]
 	imul cx
-	mov bx, 202
+	mov bx, 250
 	idiv bx
 	call round
 	add ax, Pp[4]
@@ -1228,7 +1228,7 @@ cal:
 	
 	xor dx, dx
 	mov ax, scr
-	mov bx, 202 ; number which can discuss
+	mov bx, 250 ; number which can discuss
 	imul bx
 	mov bx, vp[2]
 	idiv bx  
@@ -1239,7 +1239,7 @@ cal:
 	
 	mov cx, vp[0]
 	imul cx
-	mov bx, 202
+	mov bx, 250
 	idiv bx
 	call round
 	add ax, Pp[0]
@@ -1249,7 +1249,7 @@ cal:
 	pop dx
 	mov cx, vp[4]
 	imul cx
-	mov bx, 202
+	mov bx, 250
 	idiv bx
 	call round
 	add ax, Pp[4]
@@ -1267,7 +1267,7 @@ cal:
 	
 	xor dx, dx
 	mov ax, scr
-	mov bx, 202 ; number which can discuss
+	mov bx, 250 ; number which can discuss
 	imul bx
 	mov bx, vp[2]
 	idiv bx  
@@ -1278,7 +1278,7 @@ cal:
 	
 	mov cx, vp[0]
 	imul cx
-	mov bx, 202
+	mov bx, 250
 	idiv bx
 	call round
 	add ax, Pp[0]
@@ -1288,7 +1288,7 @@ cal:
 	pop dx
 	mov cx, vp[4]
 	imul cx
-	mov bx, 202
+	mov bx, 250
 	idiv bx
 	call round
 	add ax, Pp[4]
@@ -1306,7 +1306,7 @@ cal:
 	
 	xor dx, dx
 	mov ax, scr
-	mov bx, 202 ; number which can discuss
+	mov bx, 250 ; number which can discuss
 	imul bx
 	mov bx, vp[2]
 	idiv bx  
@@ -1317,7 +1317,7 @@ cal:
 	
 	mov cx, vp[0]
 	imul cx
-	mov bx, 202
+	mov bx, 250
 	idiv bx
 	call round
 	add ax, Pp[0]
@@ -1327,7 +1327,7 @@ cal:
 	pop dx
 	mov cx, vp[4]
 	imul cx
-	mov bx, 202
+	mov bx, 250
 	idiv bx
 	call round
 	add ax, Pp[4]
@@ -1345,7 +1345,7 @@ cal:
 	
 	xor dx, dx
 	mov ax, scr
-	mov bx, 202 ; number which can discuss
+	mov bx, 250 ; number which can discuss
 	imul bx
 	mov bx, vp[2]
 	idiv bx  
@@ -1356,7 +1356,7 @@ cal:
 	
 	mov cx, vp[0]
 	imul cx
-	mov bx, 202
+	mov bx, 250
 	idiv bx
 	call round
 	add ax, Pp[0]
@@ -1366,7 +1366,7 @@ cal:
 	pop dx
 	mov cx, vp[4]
 	imul cx
-	mov bx, 202
+	mov bx, 250
 	idiv bx
 	call round
 	add ax, Pp[4]
@@ -1384,7 +1384,7 @@ cal:
 	
 	xor dx, dx
 	mov ax, scr
-	mov bx, 202 ; number which can discuss
+	mov bx, 250 ; number which can discuss
 	imul bx
 	mov bx, vp[2]
 	idiv bx  
@@ -1395,7 +1395,7 @@ cal:
 	
 	mov cx, vp[0]
 	imul cx
-	mov bx, 202
+	mov bx, 250
 	idiv bx
 	call round
 	add ax, Pp[0]
@@ -1405,7 +1405,7 @@ cal:
 	pop dx
 	mov cx, vp[4]
 	imul cx
-	mov bx, 202
+	mov bx, 250
 	idiv bx
 	call round
 	add ax, Pp[4]
@@ -1423,7 +1423,7 @@ cal:
 	
 	xor dx, dx
 	mov ax, scr
-	mov bx, 202 ; number which can discuss
+	mov bx, 250 ; number which can discuss
 	imul bx
 	mov bx, vp[2]
 	idiv bx  
@@ -1434,7 +1434,7 @@ cal:
 	
 	mov cx, vp[0]
 	imul cx
-	mov bx, 202
+	mov bx, 250
 	idiv bx
 	call round
 	add ax, Pp[0]
@@ -1444,7 +1444,7 @@ cal:
 	pop dx
 	mov cx, vp[4]
 	imul cx
-	mov bx, 202
+	mov bx, 250
 	idiv bx
 	call round
 	add ax, Pp[4]
