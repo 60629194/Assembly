@@ -25,14 +25,7 @@
 	nsin1 dw -459 ; -sin(1)*26300
 	cos1 dw 26296 ; cos(1)*26300
 	;parameterized line equation vector
-	v1 dw 3 Dup(?)
-	v2 dw 3 Dup(?)
-	v3 dw 3 Dup(?)
-	v4 dw 3 Dup(?)
-	v5 dw 3 Dup(?)
-	v6 dw 3 Dup(?)
-	v7 dw 3 Dup(?)
-	v8 dw 3 Dup(?)
+	vp dw 3 Dup(?)
 	;projection on screen
 	sp1 dw 2 Dup(?) 
     sp2 dw 2 Dup(?)
@@ -1146,290 +1139,318 @@ cal:
 	
 	mov ax, P1[0]
 	sub ax, Pp[0]
-	mov v1[0], ax
+	mov vp[0], ax
 	mov ax, P1[2]
 	sub ax, Pp[2]
-	mov v1[2], ax
+	mov vp[2], ax
 	mov ax, P1[4]
 	sub ax, Pp[4]
-	mov v1[4], ax
+	mov vp[4], ax
 	
 	xor dx, dx
 	mov ax, scr
 	mov bx, 101 ; number which can discuss
 	imul bx
-	mov bx, v1[2]
+	mov bx, vp[2]
 	idiv bx  
 	call round
-	mov cx, ax  ;cx=t*num
+	;dx:ax=t*num
+	push dx
+	push ax
 	
-	mov ax, v1[0]
+	mov cx, vp[0]
 	imul cx
 	mov bx, 101
 	idiv bx
 	call round
 	add ax, Pp[0]
 	mov sp1[0], ax
-	
-	mov ax, v1[4]
+
+	pop ax
+	pop dx
+	mov cx, vp[4]
 	imul cx
 	mov bx, 101
 	idiv bx
 	call round
 	add ax, Pp[4]
 	mov sp1[2], ax
-	
 	;;;2
 	mov ax, P2[0]
 	sub ax, Pp[0]
-	mov v2[0], ax
+	mov vp[0], ax
 	mov ax, P2[2]
 	sub ax, Pp[2]
-	mov v2[2], ax
+	mov vp[2], ax
 	mov ax, P2[4]
 	sub ax, Pp[4]
-	mov v2[4], ax
+	mov vp[4], ax
 	
 	xor dx, dx
 	mov ax, scr
 	mov bx, 101 ; number which can discuss
 	imul bx
-	mov bx, v2[2]
+	mov bx, vp[2]
 	idiv bx  
 	call round
-	mov cx, ax  ;cx=t*num
+	;dx:ax=t*num
+	push dx
+	push ax
 	
-	mov ax, v2[0]
+	mov cx, vp[0]
 	imul cx
 	mov bx, 101
 	idiv bx
 	call round
 	add ax, Pp[0]
 	mov sp2[0], ax
-	
-	mov ax, v2[4]
+
+	pop ax
+	pop dx
+	mov cx, vp[4]
 	imul cx
 	mov bx, 101
 	idiv bx
 	call round
 	add ax, Pp[4]
 	mov sp2[2], ax
-	
 	;;;3
 	mov ax, P3[0]
 	sub ax, Pp[0]
-	mov v3[0], ax
+	mov vp[0], ax
 	mov ax, P3[2]
 	sub ax, Pp[2]
-	mov v3[2], ax
+	mov vp[2], ax
 	mov ax, P3[4]
 	sub ax, Pp[4]
-	mov v3[4], ax
+	mov vp[4], ax
 	
 	xor dx, dx
 	mov ax, scr
 	mov bx, 101 ; number which can discuss
 	imul bx
-	mov bx, v3[2]
+	mov bx, vp[2]
 	idiv bx  
 	call round
-	mov cx, ax  ;cx=t*num
+	;dx:ax=t*num
+	push dx
+	push ax
 	
-	mov ax, v3[0]
+	mov cx, vp[0]
 	imul cx
 	mov bx, 101
 	idiv bx
 	call round
 	add ax, Pp[0]
 	mov sp3[0], ax
-	
-	mov ax, v3[4]
+
+	pop ax
+	pop dx
+	mov cx, vp[4]
 	imul cx
 	mov bx, 101
 	idiv bx
 	call round
 	add ax, Pp[4]
 	mov sp3[2], ax
-	
 	;;;4
 	mov ax, P4[0]
 	sub ax, Pp[0]
-	mov v4[0], ax
+	mov vp[0], ax
 	mov ax, P4[2]
 	sub ax, Pp[2]
-	mov v4[2], ax
+	mov vp[2], ax
 	mov ax, P4[4]
 	sub ax, Pp[4]
-	mov v4[4], ax
+	mov vp[4], ax
 	
 	xor dx, dx
 	mov ax, scr
 	mov bx, 101 ; number which can discuss
 	imul bx
-	mov bx, v4[2]
+	mov bx, vp[2]
 	idiv bx  
 	call round
-	mov cx, ax  ;cx=t*num
+	;dx:ax=t*num
+	push dx
+	push ax
 	
-	mov ax, v4[0]
+	mov cx, vp[0]
 	imul cx
 	mov bx, 101
 	idiv bx
 	call round
 	add ax, Pp[0]
 	mov sp4[0], ax
-	
-	mov ax, v4[4]
+
+	pop ax
+	pop dx
+	mov cx, vp[4]
 	imul cx
 	mov bx, 101
 	idiv bx
 	call round
 	add ax, Pp[4]
 	mov sp4[2], ax
-	
 	;;;5
 	mov ax, P5[0]
 	sub ax, Pp[0]
-	mov v5[0], ax
+	mov vp[0], ax
 	mov ax, P5[2]
 	sub ax, Pp[2]
-	mov v5[2], ax
+	mov vp[2], ax
 	mov ax, P5[4]
 	sub ax, Pp[4]
-	mov v5[4], ax
+	mov vp[4], ax
 	
 	xor dx, dx
 	mov ax, scr
 	mov bx, 101 ; number which can discuss
 	imul bx
-	mov bx, v5[2]
+	mov bx, vp[2]
 	idiv bx  
 	call round
-	mov cx, ax  ;cx=t*num
+	;dx:ax=t*num
+	push dx
+	push ax
 	
-	mov ax, v5[0]
+	mov cx, vp[0]
 	imul cx
 	mov bx, 101
 	idiv bx
 	call round
 	add ax, Pp[0]
 	mov sp5[0], ax
-	
-	mov ax, v5[4]
+
+	pop ax
+	pop dx
+	mov cx, vp[4]
 	imul cx
 	mov bx, 101
 	idiv bx
 	call round
 	add ax, Pp[4]
 	mov sp5[2], ax
-	
 	;;;6
 	mov ax, P6[0]
 	sub ax, Pp[0]
-	mov v6[0], ax
+	mov vp[0], ax
 	mov ax, P6[2]
 	sub ax, Pp[2]
-	mov v6[2], ax
+	mov vp[2], ax
 	mov ax, P6[4]
 	sub ax, Pp[4]
-	mov v6[4], ax
+	mov vp[4], ax
 	
 	xor dx, dx
 	mov ax, scr
 	mov bx, 101 ; number which can discuss
 	imul bx
-	mov bx, v6[2]
+	mov bx, vp[2]
 	idiv bx  
 	call round
-	mov cx, ax  ;cx=t*num
+	;dx:ax=t*num
+	push dx
+	push ax
 	
-	mov ax, v6[0]
+	mov cx, vp[0]
 	imul cx
 	mov bx, 101
 	idiv bx
 	call round
 	add ax, Pp[0]
 	mov sp6[0], ax
-	
-	mov ax, v6[4]
+
+	pop ax
+	pop dx
+	mov cx, vp[4]
 	imul cx
 	mov bx, 101
 	idiv bx
 	call round
 	add ax, Pp[4]
 	mov sp6[2], ax
-	
 	;;;7
 	mov ax, P7[0]
 	sub ax, Pp[0]
-	mov v7[0], ax
+	mov vp[0], ax
 	mov ax, P7[2]
 	sub ax, Pp[2]
-	mov v7[2], ax
+	mov vp[2], ax
 	mov ax, P7[4]
 	sub ax, Pp[4]
-	mov v7[4], ax
+	mov vp[4], ax
 	
 	xor dx, dx
 	mov ax, scr
 	mov bx, 101 ; number which can discuss
 	imul bx
-	mov bx, v7[2]
+	mov bx, vp[2]
 	idiv bx  
 	call round
-	mov cx, ax  ;cx=t*num
+	;dx:ax=t*num
+	push dx
+	push ax
 	
-	mov ax, v7[0]
+	mov cx, vp[0]
 	imul cx
 	mov bx, 101
 	idiv bx
 	call round
 	add ax, Pp[0]
 	mov sp7[0], ax
-	
-	mov ax, v7[4]
+
+	pop ax
+	pop dx
+	mov cx, vp[4]
 	imul cx
 	mov bx, 101
 	idiv bx
 	call round
 	add ax, Pp[4]
 	mov sp7[2], ax
-	
 	;;;8
 	mov ax, P8[0]
 	sub ax, Pp[0]
-	mov v8[0], ax
+	mov vp[0], ax
 	mov ax, P8[2]
 	sub ax, Pp[2]
-	mov v8[2], ax
+	mov vp[2], ax
 	mov ax, P8[4]
 	sub ax, Pp[4]
-	mov v8[4], ax
+	mov vp[4], ax
 	
 	xor dx, dx
 	mov ax, scr
 	mov bx, 101 ; number which can discuss
 	imul bx
-	mov bx, v8[2]
+	mov bx, vp[2]
 	idiv bx  
 	call round
-	mov cx, ax  ;cx=t*num
+	;dx:ax=t*num
+	push dx
+	push ax
 	
-	mov ax, v8[0]
+	mov cx, vp[0]
 	imul cx
 	mov bx, 101
 	idiv bx
 	call round
 	add ax, Pp[0]
 	mov sp8[0], ax
-	
-	mov ax, v8[4]
+
+	pop ax
+	pop dx
+	mov cx, vp[4]
 	imul cx
 	mov bx, 101
 	idiv bx
 	call round
 	add ax, Pp[4]
 	mov sp8[2], ax
+	;;;
+
+
 	
 gra:
     ;show proj
