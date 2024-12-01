@@ -1,6 +1,6 @@
 PWB-GENERATED FILE: DO NOT MODIFY
 [shared-]
-	pmark="D:\main.asm" 168 1
+	pmark="D:\main.asm" 741 1
 	version=3
 	project=""
 	buildmode=0
@@ -114,19 +114,21 @@ PWB-GENERATED FILE: DO NOT MODIFY
 [debug-]
 	target="d:\main.exe"
 	synonym=;D:
+	genericbp='E "{,MAIN.ASM,D:\MAIN.EXE} .444"
+	genericbp='E "{,MAIN.ASM,D:\MAIN.EXE} .700"
 	memwin=vm1b DS:0 
 	memwin=vm2b DS:0 
 [cv]
 	wndstate=0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1
 	wndstate=1 67 6 1 1 0 1 0 0 0 0 0 0 0 -1
 	wndstate=2 34 8 33 1 0 0 0 0 0 0 0 0 0 -1
-	wndstate=3 67 23 0 7 1 1 0 0 0 167 156 0 0 -1
+	wndstate=3 67 23 0 7 1 1 0 23 0 741 731 0 0 -1
 	wndstate=4 67 9 3 12 0 0 0 0 0 0 0 0 0 -1
 	wndstate=5 67 6 0 30 0 1 0 0 0 0 0 0 0 -1
 	wndstate=6 67 6 3 33 0 1 0 0 0 0 0 0 0 -1
 	wndstate=7 13 41 67 1 0 1 0 0 0 0 0 0 0 -1
 	wndstate=8 67 8 0 26 0 0 0 0 0 0 0 0 0 -1
-	wndstate=9 67 6 0 36 0 1 0 1 0 0 0 0 0 -1
+	wndstate=9 67 6 0 36 0 1 0 1 0 4 1 0 0 -1
 	command=use auto
 	command=n10
 	screensize=43
