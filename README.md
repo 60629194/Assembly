@@ -22,5 +22,5 @@ To use the functions, include xxx.inc in code section.
 - **EXadd** : DX:AX = DX:AX + BX:CX
 - **round** : use after div instruction. \
   Orginal: BX = devisor AX = quotient, DX = remainder\
-  Modified: AX = round(DX:AX/BX), DX = remainder\
+  Modified: AX = round(DX:AX/BX), DX = remainder
 - **abs** : ax=|ax|
