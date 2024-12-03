@@ -1460,7 +1460,6 @@ gra:
     cmp bx, si
     jb swap1
     sub bx, si
-
     mov ax, sp2[2]
     mov di, sp1[2]
     sub ax, di
@@ -1469,11 +1468,9 @@ swap1:
     mov bx, sp1[0]
     mov si, sp2[0]
     sub bx, si
-
     mov ax, sp1[2]
     mov di, sp2[2]
     sub ax, di
-
 done1:
     xor dx, dx
     push ax
@@ -1482,64 +1479,47 @@ done1:
     call abs
     cmp ax, 1
     ja incy
-    jbe incx
 ;ax = y2-y1
 ;bx = x2-x1
 ;si = x1
 ;di = y1
 incx:
     pop ax
-
-    
     mov cx, si
     mov si, 0
-
-    
 repeatx:
     inc si ;si = x-x1
     push ax
-
     imul si
     idiv bx
     mov dx, ax ;dx = k(x-x1)
-
     inc cx
     add dx, di ;dx = k(x-x1)+y1
     mov ax, 0c01h ; draw cx, dx
     int 10h
-
     pop ax
-
     cmp si, bx
     jne repeatx
-
-
     jmp done12
 incy:
     pop ax
-    
-    
-    mov dx, di
-    mov di, 0
-
+    mov dx, di ;dx= start position of y 
+    mov di, 0 ; y-y1
 repeaty:
-    mov cx, ax ;y2-y1
-    inc di ;y-y1
+    inc di
+    mov cx, ax;y2-y1
     push ax
     push dx
-    imul si;ax = (y2-y1)x1
-    idiv bx;ax = kx1
-    add ax, di ;ax = y-y1+kx1
-    imul bx ;ax = (x2-x1)(y-y1+kx1)
-    idiv cx;(y-y1+kx1)/k
-    pop dx ;current y axis
-    mov cx, ax;x found
+    mov ax, di
+    imul bx;(y-y1)(x2-x1)
+    idiv cx;ax = (y-y1)/k
+    mov cx, ax
+    pop dx
+    add cx, si;cx = (y-y1)/k + x1
     inc dx
     mov ax, 0c01h ; draw cx, dx
     int 10h
-
     pop ax
-
     cmp ax, di
     jne repeaty
 
