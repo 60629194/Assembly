@@ -20,3 +20,16 @@ round proc
     inc ax
     ret
 round endp
+
+abs PROC
+    push bx
+    mov bx, ax
+    add bx, ax
+    jc @negative
+    pop bx
+    ret
+@negative:
+    neg ax
+    pop bx
+    ret
+abs ENDP
