@@ -24,3 +24,10 @@ To use the functions, include xxx.inc in code section.
   Orginal: BX = devisor AX = quotient, DX = remainder\
   Modified: AX = round(DX:AX/BX), DX = remainder
 - **abs** : ax = |ax|
+
+### vmem.inc
+
+#### Functions
+
+- **vmem** : draw CX, DX directly in video memory. \
+  Color: depends on color db
