@@ -45,3 +45,38 @@ vmem PROC
     ret
     
 vmem ENDP
+
+vmemr PROC
+    push ax
+    push bx
+    push cx
+    push dx
+    push di
+    mov ax, 0A000h ; video memory start point
+    mov es, ax
+
+    ;offset=y*(640/8)+(x/8)
+    mov ax, dx
+    mov bx, 80
+    mul bx
+    mov di, ax
+
+    mov ax, cx
+    mov bx, 8
+    div bx
+    add di, ax ; di=offset
+
+    cmp byte ptr es:[di], 15 ;white
+    ja @nah
+    mov lineyn, 1
+    jmp @fns
+@nah: mov lineyn, 0
+@fns:
+    pop di
+    pop dx
+    pop cx
+    pop bx
+    pop ax
+    ret
+
+vmemr ENDP

@@ -82,6 +82,7 @@
 	scr dw 500 ;y coordinate of screen
 
     color db 0; 0black 1blue(9) 2green(10) 4red(12) 6brown 7gray 14yellow 15white (light color)  
+    lineyn db 0 ;check line
 
 .code
 include trig.inc

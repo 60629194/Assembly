@@ -31,3 +31,5 @@ To use the functions, include xxx.inc in code section.
 
 - **vmem** : draw CX, DX directly in video memory. \
   Color: depends on color db
+- **vmemr** : check CX, DX have white pixel or not. \
+  return: lineyn 1(yes) 0(no)
