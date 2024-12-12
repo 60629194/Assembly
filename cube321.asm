@@ -83,6 +83,7 @@
 
     color db 0; 0black 1blue(9) 2green(10) 4red(12) 6brown 7gray 14yellow 15white (light color)  
     lineyn db 0 ;check line
+    rubik dw 2,2,6,6,1,1,4,4,2,2,6,6,1,1,4,4,14,14,14,14,7,7,7,7
 
 .code
 include trig.inc
