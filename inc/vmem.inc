@@ -47,7 +47,7 @@ vmem PROC
 vmem ENDP
 
 vmemr PROC
-    push ax
+
     push bx
     push cx
     push dx
@@ -66,17 +66,25 @@ vmemr PROC
     div bx
     add di, ax ; di=offset
 
-    cmp byte ptr es:[di], 15 ;white
-    ja @nah
-    mov lineyn, 1
-    jmp @fns
-@nah: mov lineyn, 0
-@fns:
+    mov al, es:[di]
+   ;shl al dx times, and shr 7 times
+    cmp dx, 0
+    je @shiftr
+
+@shiftl:
+    shl al, 1
+    dec dx
+    cmp dx, 0
+    jne @shiftl
+
+@shiftr:
+    mov cl, 7
+    shr al, cl
+
     pop di
     pop dx
     pop cx
     pop bx
-    pop ax
     ret
 
 vmemr ENDP
