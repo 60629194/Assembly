@@ -1,70 +1,101 @@
 .model small
 .stack
 .data
-	P1 dw 320, 240
-	P2 dw 350, 100
-	P3 dw 250, 125
-	P4 dw 375, 175
-	md dw 2 Dup(?)
-	color db 15
-    lineyn db 0
+    color db 15
 .code
 include vmem.inc
-main proc
-	mov ax, @data
-	mov ds, ax
+main PROC
+    mov ax, @data
+    mov ds, ax
 
-	mov ax, 12h
-	int 10h
-	
-    mov cx, P1[0]
-	mov dx, P1[2]
-	call vmem
-	
-	mov cx, P2[0]
-	mov dx, P2[2]
-	call vmem
-	
-	mov cx, P3[0]
-	mov dx, P3[2]
-	call vmem
-	
-	mov cx, P4[0]
-	mov dx, P4[2]
-	call vmem
+    mov ax, 12h
+    int 10h
 
-    xor dx, dx
-    mov ax, P1[0]
-    add ax, word ptr P2[0]
-    add ax, word ptr P3[0]
-    add ax, word ptr P4[0]
-    mov bx, 4
-    div bx
-    mov md[0], ax
+    mov cx, 100
+    mov dx, 100
 
-    xor dx, dx
-    mov ax, P1[2]
-    add ax, word ptr P2[2]
-    add ax, word ptr P3[2]
-    add ax, word ptr P4[2]
-    mov bx, 4
-    div bx
-    mov md[2], ax
+    call vmem
+    .repeat
+        inc cx
+        call vmem
+    .until cx==200 ;(200, 100)
 
-    mov cx, md[0]
-	mov dx, md[2]
-	call vmem
+    .repeat
+        dec cx
+        inc dx
+        call vmem
+    .until cx==50 ;(50, 250)    
+
+    .repeat
+        dec dx
+        call vmem 
+    .until dx==150 ;(50, 150)
+
+    .repeat
+        inc cx
+        dec dx
+        call vmem
+    .until dx==100 
+
+    mov color, 14
+    mov cx, 100
+    mov dx, 150
+    mov si, 0ffffh
+    push si
+    call fill
+
+    mov ax, 0
+    int 16h
+
+    mov ax, 3
+    int 10h
+
+    mov ax, 4c00h
+    int 21h
+
+main ENDP
+
+fill PROC
+    push cx
+    push dx
+    ;(cx, dx)
+    call vmem
+
+    inc cx
     call vmemr
-    mov al, lineyn
-	
-	mov ax, 0
-	int 16h
-	
-	mov ax, 3
-	int 10h
-	
-	mov ax, 4c00h
-	int 21h
+    cmp al, 0
+    jne notr
+    call fill
+notr:    
+    dec cx
+    dec cx
+    call vmemr
+    cmp al, 0
+    jne notl
+    call fill
+notl:
+    inc cx
+    inc dx
+    call vmemr
+    cmp al, 0
+    jne notu
+    call fill
+notu:
+    dec dx
+    dec dx
+    call vmemr
+    cmp al, 0
+    jne notd
+    call fill
+notd:
+    pop dx
+    cmp dx, 0ffffh
+    je finish
+    pop cx
+    call fill
 
-main endp
+finish:
+    ret    
+    
+fill ENDP
 end main

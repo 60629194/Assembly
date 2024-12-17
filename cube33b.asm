@@ -4306,6 +4306,577 @@ y1by23758:
 	push ax
 	jmp incy
 ;;;;;;;;;;
+;;;;;;;;;;
+l1237:    
+    mov ax, sp37[2]
+	mov si, sp12[2]
+	sub ax, si
+	mov bx, sp37[0]
+	mov di, sp12[0]
+	sub bx, di
+	cmp bx, 0
+	je y1by21237
+	xor dx, dx
+	cwd
+	idiv bx
+    cmp dx, 0
+    je skip1237
+    cmp ax, -1
+    jne skip1237
+    dec ax
+skip1237:
+	mov slope, ax
+
+	cmp ax, -1
+	jg x1bx21237
+
+	cmp ax, -1
+	jl y1by21237
+
+x1bx21237:
+	mov ax, sp12[0]
+	mov bx, sp37[0]
+	mov si, sp12[2]
+	mov di, sp37[2]
+	cmp ax, bx
+	jb setx1237
+	xchg ax, bx
+	xchg si, di
+
+	setx1237:
+	push ax
+	mov ax, slope
+	cmp ax, 1
+	jge incy
+	jmp incx
+
+y1by21237:
+	mov ax, sp12[0]
+	mov bx, sp37[0]
+	mov si, sp12[2]
+	mov di, sp37[2]
+	cmp si, di
+	jb sety1237
+	xchg ax, bx
+	xchg si, di
+
+	sety1237:
+	push ax
+	jmp incy
+;;;;;;;;;;
+l1327:    
+    mov ax, sp27[2]
+	mov si, sp13[2]
+	sub ax, si
+	mov bx, sp27[0]
+	mov di, sp13[0]
+	sub bx, di
+	cmp bx, 0
+	je y1by21327
+	xor dx, dx
+	cwd
+	idiv bx
+    cmp dx, 0
+    je skip1327
+    cmp ax, -1
+    jne skip1327
+    dec ax
+skip1327:
+	mov slope, ax
+
+	cmp ax, -1
+	jg x1bx21327
+
+	cmp ax, -1
+	jl y1by21327
+
+x1bx21327:
+	mov ax, sp13[0]
+	mov bx, sp27[0]
+	mov si, sp13[2]
+	mov di, sp27[2]
+	cmp ax, bx
+	jb setx1327
+	xchg ax, bx
+	xchg si, di
+
+	setx1327:
+	push ax
+	mov ax, slope
+	cmp ax, 1
+	jge incy
+	jmp incx
+
+y1by21327:
+	mov ax, sp13[0]
+	mov bx, sp27[0]
+	mov si, sp13[2]
+	mov di, sp27[2]
+	cmp si, di
+	jb sety1327
+	xchg ax, bx
+	xchg si, di
+
+	sety1327:
+	push ax
+	jmp incy
+;;;;;;;;;;
+l4568:    
+    mov ax, sp68[2]
+	mov si, sp45[2]
+	sub ax, si
+	mov bx, sp68[0]
+	mov di, sp45[0]
+	sub bx, di
+	cmp bx, 0
+	je y1by24568
+	xor dx, dx
+	cwd
+	idiv bx
+    cmp dx, 0
+    je skip4568
+    cmp ax, -1
+    jne skip4568
+    dec ax
+skip4568:
+	mov slope, ax
+
+	cmp ax, -1
+	jg x1bx24568
+
+	cmp ax, -1
+	jl y1by24568
+
+x1bx24568:
+	mov ax, sp45[0]
+	mov bx, sp68[0]
+	mov si, sp45[2]
+	mov di, sp68[2]
+	cmp ax, bx
+	jb setx4568
+	xchg ax, bx
+	xchg si, di
+
+	setx4568:
+	push ax
+	mov ax, slope
+	cmp ax, 1
+	jge incy
+	jmp incx
+
+y1by24568:
+	mov ax, sp45[0]
+	mov bx, sp68[0]
+	mov si, sp45[2]
+	mov di, sp68[2]
+	cmp si, di
+	jb sety4568
+	xchg ax, bx
+	xchg si, di
+
+	sety4568:
+	push ax
+	jmp incy
+;;;;;;;;;;
+l4658:    
+    mov ax, sp58[2]
+	mov si, sp46[2]
+	sub ax, si
+	mov bx, sp58[0]
+	mov di, sp46[0]
+	sub bx, di
+	cmp bx, 0
+	je y1by24658
+	xor dx, dx
+	cwd
+	idiv bx
+    cmp dx, 0
+    je skip4658
+    cmp ax, -1
+    jne skip4658
+    dec ax
+skip4658:
+	mov slope, ax
+
+	cmp ax, -1
+	jg x1bx24658
+
+	cmp ax, -1
+	jl y1by24658
+
+x1bx24658:
+	mov ax, sp46[0]
+	mov bx, sp58[0]
+	mov si, sp46[2]
+	mov di, sp58[2]
+	cmp ax, bx
+	jb setx4658
+	xchg ax, bx
+	xchg si, di
+
+	setx4658:
+	push ax
+	mov ax, slope
+	cmp ax, 1
+	jge incy
+	jmp incx
+
+y1by24658:
+	mov ax, sp46[0]
+	mov bx, sp58[0]
+	mov si, sp46[2]
+	mov di, sp58[2]
+	cmp si, di
+	jb sety4658
+	xchg ax, bx
+	xchg si, di
+
+	sety4658:
+	push ax
+	jmp incy
+;;;;;;;;;;
+l1246:    
+    mov ax, sp46[2]
+	mov si, sp12[2]
+	sub ax, si
+	mov bx, sp46[0]
+	mov di, sp12[0]
+	sub bx, di
+	cmp bx, 0
+	je y1by21246
+	xor dx, dx
+	cwd
+	idiv bx
+    cmp dx, 0
+    je skip1246
+    cmp ax, -1
+    jne skip1246
+    dec ax
+skip1246:
+	mov slope, ax
+
+	cmp ax, -1
+	jg x1bx21246
+
+	cmp ax, -1
+	jl y1by21246
+
+x1bx21246:
+	mov ax, sp12[0]
+	mov bx, sp46[0]
+	mov si, sp12[2]
+	mov di, sp46[2]
+	cmp ax, bx
+	jb setx1246
+	xchg ax, bx
+	xchg si, di
+
+	setx1246:
+	push ax
+	mov ax, slope
+	cmp ax, 1
+	jge incy
+	jmp incx
+
+y1by21246:
+	mov ax, sp12[0]
+	mov bx, sp46[0]
+	mov si, sp12[2]
+	mov di, sp46[2]
+	cmp si, di
+	jb sety1246
+	xchg ax, bx
+	xchg si, di
+
+	sety1246:
+	push ax
+	jmp incy
+;;;;;;;;;;
+l1426:    
+    mov ax, sp26[2]
+	mov si, sp14[2]
+	sub ax, si
+	mov bx, sp26[0]
+	mov di, sp14[0]
+	sub bx, di
+	cmp bx, 0
+	je y1by21426
+	xor dx, dx
+	cwd
+	idiv bx
+    cmp dx, 0
+    je skip1426
+    cmp ax, -1
+    jne skip1426
+    dec ax
+skip1426:
+	mov slope, ax
+
+	cmp ax, -1
+	jg x1bx21426
+
+	cmp ax, -1
+	jl y1by21426
+
+x1bx21426:
+	mov ax, sp14[0]
+	mov bx, sp26[0]
+	mov si, sp14[2]
+	mov di, sp26[2]
+	cmp ax, bx
+	jb setx1426
+	xchg ax, bx
+	xchg si, di
+
+	setx1426:
+	push ax
+	mov ax, slope
+	cmp ax, 1
+	jge incy
+	jmp incx
+
+y1by21426:
+	mov ax, sp14[0]
+	mov bx, sp26[0]
+	mov si, sp14[2]
+	mov di, sp26[2]
+	cmp si, di
+	jb sety1426
+	xchg ax, bx
+	xchg si, di
+
+	sety1426:
+	push ax
+	jmp incy
+;;;;;;;;;;
+l1345:    
+    mov ax, sp45[2]
+	mov si, sp13[2]
+	sub ax, si
+	mov bx, sp45[0]
+	mov di, sp13[0]
+	sub bx, di
+	cmp bx, 0
+	je y1by21345
+	xor dx, dx
+	cwd
+	idiv bx
+    cmp dx, 0
+    je skip1345
+    cmp ax, -1
+    jne skip1345
+    dec ax
+skip1345:
+	mov slope, ax
+
+	cmp ax, -1
+	jg x1bx21345
+
+	cmp ax, -1
+	jl y1by21345
+
+x1bx21345:
+	mov ax, sp13[0]
+	mov bx, sp45[0]
+	mov si, sp13[2]
+	mov di, sp45[2]
+	cmp ax, bx
+	jb setx1345
+	xchg ax, bx
+	xchg si, di
+
+	setx1345:
+	push ax
+	mov ax, slope
+	cmp ax, 1
+	jge incy
+	jmp incx
+
+y1by21345:
+	mov ax, sp13[0]
+	mov bx, sp45[0]
+	mov si, sp13[2]
+	mov di, sp45[2]
+	cmp si, di
+	jb sety1345
+	xchg ax, bx
+	xchg si, di
+
+	sety1345:
+	push ax
+	jmp incy
+;;;;;;;;;;
+l1435:    
+    mov ax, sp35[2]
+	mov si, sp14[2]
+	sub ax, si
+	mov bx, sp35[0]
+	mov di, sp14[0]
+	sub bx, di
+	cmp bx, 0
+	je y1by21435
+	xor dx, dx
+	cwd
+	idiv bx
+    cmp dx, 0
+    je skip1435
+    cmp ax, -1
+    jne skip1435
+    dec ax
+skip1435:
+	mov slope, ax
+
+	cmp ax, -1
+	jg x1bx21435
+
+	cmp ax, -1
+	jl y1by21435
+
+x1bx21435:
+	mov ax, sp14[0]
+	mov bx, sp35[0]
+	mov si, sp14[2]
+	mov di, sp35[2]
+	cmp ax, bx
+	jb setx1435
+	xchg ax, bx
+	xchg si, di
+
+	setx1435:
+	push ax
+	mov ax, slope
+	cmp ax, 1
+	jge incy
+	jmp incx
+
+y1by21435:
+	mov ax, sp14[0]
+	mov bx, sp35[0]
+	mov si, sp14[2]
+	mov di, sp35[2]
+	cmp si, di
+	jb sety1435
+	xchg ax, bx
+	xchg si, di
+
+	sety1435:
+	push ax
+	jmp incy
+;;;;;;;;;;
+l2678:    
+    mov ax, sp78[2]
+	mov si, sp26[2]
+	sub ax, si
+	mov bx, sp78[0]
+	mov di, sp26[0]
+	sub bx, di
+	cmp bx, 0
+	je y1by22678
+	xor dx, dx
+	cwd
+	idiv bx
+    cmp dx, 0
+    je skip2678
+    cmp ax, -1
+    jne skip2678
+    dec ax
+skip2678:
+	mov slope, ax
+
+	cmp ax, -1
+	jg x1bx22678
+
+	cmp ax, -1
+	jl y1by22678
+
+x1bx22678:
+	mov ax, sp26[0]
+	mov bx, sp78[0]
+	mov si, sp26[2]
+	mov di, sp78[2]
+	cmp ax, bx
+	jb setx2678
+	xchg ax, bx
+	xchg si, di
+
+	setx2678:
+	push ax
+	mov ax, slope
+	cmp ax, 1
+	jge incy
+	jmp incx
+
+y1by22678:
+	mov ax, sp26[0]
+	mov bx, sp78[0]
+	mov si, sp26[2]
+	mov di, sp78[2]
+	cmp si, di
+	jb sety2678
+	xchg ax, bx
+	xchg si, di
+
+	sety2678:
+	push ax
+	jmp incy
+;;;;;;;;;;
+l2768:    
+    mov ax, sp68[2]
+	mov si, sp27[2]
+	sub ax, si
+	mov bx, sp68[0]
+	mov di, sp27[0]
+	sub bx, di
+	cmp bx, 0
+	je y1by22768
+	xor dx, dx
+	cwd
+	idiv bx
+    cmp dx, 0
+    je skip2768
+    cmp ax, -1
+    jne skip2768
+    dec ax
+skip2768:
+	mov slope, ax
+
+	cmp ax, -1
+	jg x1bx22768
+
+	cmp ax, -1
+	jl y1by22768
+
+x1bx22768:
+	mov ax, sp27[0]
+	mov bx, sp68[0]
+	mov si, sp27[2]
+	mov di, sp68[2]
+	cmp ax, bx
+	jb setx2768
+	xchg ax, bx
+	xchg si, di
+
+	setx2768:
+	push ax
+	mov ax, slope
+	cmp ax, 1
+	jge incy
+	jmp incx
+
+y1by22768:
+	mov ax, sp27[0]
+	mov bx, sp68[0]
+	mov si, sp27[2]
+	mov di, sp68[2]
+	cmp si, di
+	jb sety2768
+	xchg ax, bx
+	xchg si, di
+
+	sety2768:
+	push ax
+	jmp incy
+;;;;;;;;;;
 
 
 incx:
@@ -4945,7 +5516,7 @@ doneline:
 
     c3758:
 	cmp word ptr countline, 14
-	jne ipt
+	jne c1237
 	mov ax, vP38[0]
 	mov dx, Nr3578[0]
 	imul dx
@@ -4967,6 +5538,258 @@ doneline:
 	s3758:
     cmp word ptr countline, 14
     je l3758
+
+	c1237:
+	cmp word ptr countline, 15
+	jne c1327
+	mov ax, vP23[0]
+	mov dx, Nr1237[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP23[2]
+	mov dx, Nr1237[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP23[4]
+	mov dx, Nr1237[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jl s1237
+	jmp doneline
+	s1237:
+    cmp word ptr countline, 15
+    je l1237
+
+	c1327:
+	cmp word ptr countline, 16
+	jne c4568
+	mov ax, vP23[0]
+	mov dx, Nr1237[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP23[2]
+	mov dx, Nr1237[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP23[4]
+	mov dx, Nr1237[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jl s1327
+	jmp doneline
+	s1327:
+    cmp word ptr countline, 16
+    je l1327
+
+	c4568:
+	cmp word ptr countline, 17
+	jne c4658
+	mov ax, vP56[0]
+	mov dx, Nr4568[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP56[2]
+	mov dx, Nr4568[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP56[4]
+	mov dx, Nr4568[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jl s4568
+	jmp doneline
+	s4568:
+    cmp word ptr countline, 17
+    je l4568
+
+	c4658:
+	cmp word ptr countline, 18
+	jne c1246
+	mov ax, vP56[0]
+	mov dx, Nr4568[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP56[2]
+	mov dx, Nr4568[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP56[4]
+	mov dx, Nr4568[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jl s4658
+	jmp doneline
+	s4658:
+    cmp word ptr countline, 18
+    je l4658
+
+	c1246:
+	cmp word ptr countline, 19
+	jne c1426
+	mov ax, vP24[0]
+	mov dx, Nr1246[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP24[2]
+	mov dx, Nr1246[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP24[4]
+	mov dx, Nr1246[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jl s1246
+	jmp doneline
+	s1246:
+    cmp word ptr countline, 19
+    je l1246
+
+	c1426:
+	cmp word ptr countline, 20
+	jne c1345
+	mov ax, vP24[0]
+	mov dx, Nr1246[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP24[2]
+	mov dx, Nr1246[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP24[4]
+	mov dx, Nr1246[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jl s1426
+	jmp doneline
+	s1426:
+    cmp word ptr countline, 20
+    je l1426
+	
+	c1345:
+	cmp word ptr countline, 21
+	jne c1435
+	mov ax, vP15[0]
+	mov dx, Nr1345[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP15[2]
+	mov dx, Nr1345[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP15[4]
+	mov dx, Nr1345[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jl s1345
+	jmp doneline
+	s1345:
+    cmp word ptr countline, 21
+    je l1345
+
+	c1435:
+	cmp word ptr countline, 22
+	jne c2678
+	mov ax, vP15[0]
+	mov dx, Nr1345[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP15[2]
+	mov dx, Nr1345[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP15[4]
+	mov dx, Nr1345[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jl s1435
+	jmp doneline
+	s1435:
+    cmp word ptr countline, 22
+    je l1435
+
+	c2678:
+	cmp word ptr countline, 23
+	jne c2768
+	mov ax, vP28[0]
+	mov dx, Nr2678[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP28[2]
+	mov dx, Nr2678[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP28[4]
+	mov dx, Nr2678[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jl s2678
+	jmp doneline
+	s2678:
+    cmp word ptr countline, 23
+    je l2678
+
+	c2768:
+	cmp word ptr countline, 24
+	jne ipt
+	mov ax, vP28[0]
+	mov dx, Nr2678[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP28[2]
+	mov dx, Nr2678[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP28[4]
+	mov dx, Nr2678[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jl s2768
+	jmp doneline
+	s2768:
+    cmp word ptr countline, 24
+    je l2768
+	
+
 
     
     jmp ipt
