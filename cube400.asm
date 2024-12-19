@@ -6081,29 +6081,659 @@ doneline:
     je l2768
 
 filling:
+	mov si, -1
+fillplus:	
+	inc si
+
+	cmp si, 0
+	jne lcp1
+	mov ax, vP38[0]
+	mov dx, Nr3578[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP38[2]
+	mov dx, Nr3578[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP38[4]
+	mov dx, Nr3578[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
 	mov cx, cp0[0]
 	mov dx, cp0[2]
 	mov al, rubik[0]
 	mov color, al
-	call vmem
-
+	call pointexpand
+	cmp si, 0
+	je fillplus
+lcp1:
+	cmp si, 1
+	jne lcp2
+	mov ax, vP38[0]
+	mov dx, Nr3578[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP38[2]
+	mov dx, Nr3578[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP38[4]
+	mov dx, Nr3578[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
 	mov cx, cp1[0]
 	mov dx, cp1[2]
 	mov al, rubik[1]
 	mov color, al
-	call vmem
+	call pointexpand
+	cmp si, 1
+	je fillplus	
+lcp2:
+	cmp si, 2
+	jne lcp3
+	mov ax, vP23[0]
+	mov dx, Nr1237[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP23[2]
+	mov dx, Nr1237[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP23[4]
+	mov dx, Nr1237[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
+	mov cx, cp2[0]
+	mov dx, cp2[2]
+	mov al, rubik[2]
+	mov color, al
+	call pointexpand
+	cmp si, 2
+	je fillplus
+lcp3:
+	cmp si, 3
+	jne lcp4
+	mov ax, vP23[0]
+	mov dx, Nr1237[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP23[2]
+	mov dx, Nr1237[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP23[4]
+	mov dx, Nr1237[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
+	mov cx, cp3[0]
+	mov dx, cp3[2]
+	mov al, rubik[3]
+	mov color, al
+	call pointexpand
+	cmp si, 3
+	je fillplus
+lcp4:
+	cmp si, 4
+	jne lcp5
+	mov ax, vP24[0]
+	mov dx, Nr1246[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP24[2]
+	mov dx, Nr1246[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP24[4]
+	mov dx, Nr1246[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
+	mov cx, cp4[0]
+	mov dx, cp4[2]
+	mov al, rubik[4]
+	mov color, al
+	call pointexpand
+	cmp si, 4
+	je fillplus
+lcp5:
+	cmp si, 5
+	jne lcp6
+	mov ax, vP24[0]
+	mov dx, Nr1246[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP24[2]
+	mov dx, Nr1246[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP24[4]
+	mov dx, Nr1246[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
+	mov cx, cp5[0]
+	mov dx, cp5[2]
+	mov al, rubik[5]
+	mov color, al
+	call pointexpand
+	cmp si, 5
+	je fillplus
+lcp6:
+	cmp si, 6
+	jne lcp7
+	mov ax, vP56[0]
+	mov dx, Nr4568[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP56[2]
+	mov dx, Nr4568[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP56[4]
+	mov dx, Nr4568[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
+	mov cx, cp6[0]
+	mov dx, cp6[2]
+	mov al, rubik[6]
+	mov color, al
+	call pointexpand
+	cmp si, 6
+	je fillplus
+lcp7:
+	cmp si, 7
+	jne lcp8
+	mov ax, vP56[0]
+	mov dx, Nr4568[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP56[2]
+	mov dx, Nr4568[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP56[4]
+	mov dx, Nr4568[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
+	mov cx, cp7[0]
+	mov dx, cp7[2]
+	mov al, rubik[7]
+	mov color, al
+	call pointexpand
+	cmp si, 7
+	je fillplus
 
+lcp8:
+	cmp si, 8
+	jne lcp9
+	mov ax, vP38[0]
+	mov dx, Nr3578[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP38[2]
+	mov dx, Nr3578[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP38[4]
+	mov dx, Nr3578[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
 	mov cx, cp8[0]
 	mov dx, cp8[2]
 	mov al, rubik[8]
 	mov color, al
-	call vmem
-
+	call pointexpand
+	cmp si, 8
+	je fillplus
+lcp9:
+	cmp si, 9
+	jne lcp10
+	mov ax, vP38[0]
+	mov dx, Nr3578[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP38[2]
+	mov dx, Nr3578[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP38[4]
+	mov dx, Nr3578[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
 	mov cx, cp9[0]
 	mov dx, cp9[2]
 	mov al, rubik[9]
 	mov color, al
-	call vmem
+	call pointexpand
+	cmp si, 9
+	je fillplus	
+lcp10:
+	cmp si, 10
+	jne lcp11
+	mov ax, vP23[0]
+	mov dx, Nr1237[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP23[2]
+	mov dx, Nr1237[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP23[4]
+	mov dx, Nr1237[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
+	mov cx, cp10[0]
+	mov dx, cp10[2]
+	mov al, rubik[10]
+	mov color, al
+	call pointexpand
+	cmp si, 10
+	je fillplus
+lcp11:
+	cmp si, 11
+	jne lcp12
+	mov ax, vP23[0]
+	mov dx, Nr1237[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP23[2]
+	mov dx, Nr1237[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP23[4]
+	mov dx, Nr1237[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
+	mov cx, cp11[0]
+	mov dx, cp11[2]
+	mov al, rubik[11]
+	mov color, al
+	call pointexpand
+	cmp si, 11
+	je fillplus
+lcp12:
+	cmp si, 12
+	jne lcp13
+	mov ax, vP24[0]
+	mov dx, Nr1246[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP24[2]
+	mov dx, Nr1246[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP24[4]
+	mov dx, Nr1246[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
+	mov cx, cp12[0]
+	mov dx, cp12[2]
+	mov al, rubik[12]
+	mov color, al
+	call pointexpand
+	cmp si, 12
+	je fillplus
+lcp13:
+	cmp si, 13
+	jne lcp14
+	mov ax, vP24[0]
+	mov dx, Nr1246[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP24[2]
+	mov dx, Nr1246[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP24[4]
+	mov dx, Nr1246[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
+	mov cx, cp13[0]
+	mov dx, cp13[2]
+	mov al, rubik[13]
+	mov color, al
+	call pointexpand
+	cmp si, 13
+	je fillplus
+lcp14:
+	cmp si, 14
+	jne lcp15
+	mov ax, vP56[0]
+	mov dx, Nr4568[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP56[2]
+	mov dx, Nr4568[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP56[4]
+	mov dx, Nr4568[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
+	mov cx, cp14[0]
+	mov dx, cp14[2]
+	mov al, rubik[14]
+	mov color, al
+	call pointexpand
+	cmp si, 14
+	je fillplus
+lcp15:
+	cmp si, 15
+	jne lcp16
+	mov ax, vP56[0]
+	mov dx, Nr4568[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP56[2]
+	mov dx, Nr4568[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP56[4]
+	mov dx, Nr4568[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
+	mov cx, cp15[0]
+	mov dx, cp15[2]
+	mov al, rubik[15]
+	mov color, al
+	call pointexpand
+	cmp si, 15
+	je fillplus
+lcp16:
+	cmp si, 16
+	jne lcp17
+	mov ax, vP15[0]
+	mov dx, Nr1345[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP15[2]
+	mov dx, Nr1345[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP15[4]
+	mov dx, Nr1345[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
+	mov cx, cp16[0]
+	mov dx, cp16[2]
+	mov al, rubik[16]
+	mov color, al
+	call pointexpand
+	cmp si, 16
+	je fillplus
+lcp17:
+	cmp si, 17
+	jne lcp18
+	mov ax, vP15[0]
+	mov dx, Nr1345[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP15[2]
+	mov dx, Nr1345[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP15[4]
+	mov dx, Nr1345[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
+	mov cx, cp17[0]
+	mov dx, cp17[2]
+	mov al, rubik[17]
+	mov color, al
+	call pointexpand
+	cmp si, 17
+	je fillplus
+lcp18:
+	cmp si, 18
+	jne lcp19
+	mov ax, vP15[0]
+	mov dx, Nr1345[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP15[2]
+	mov dx, Nr1345[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP15[4]
+	mov dx, Nr1345[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
+	mov cx, cp18[0]
+	mov dx, cp18[2]
+	mov al, rubik[18]
+	mov color, al
+	call pointexpand
+	cmp si, 18
+	je fillplus
+lcp19:
+	cmp si, 19
+	jne lcp20
+	mov ax, vP15[0]
+	mov dx, Nr1345[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP15[2]
+	mov dx, Nr1345[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP15[4]
+	mov dx, Nr1345[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
+	mov cx, cp19[0]
+	mov dx, cp19[2]
+	mov al, rubik[19]
+	mov color, al
+	call pointexpand
+	cmp si, 19
+	je fillplus
+lcp20:
+	cmp si, 20
+	jne lcp21
+	mov ax, vP28[0]
+	mov dx, Nr2678[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP28[2]
+	mov dx, Nr2678[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP28[4]
+	mov dx, Nr2678[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
+	mov cx, cp20[0]
+	mov dx, cp20[2]
+	mov al, rubik[20]
+	mov color, al
+	call pointexpand
+	cmp si, 20
+	je fillplus
+lcp21:
+	cmp si, 21
+	jne lcp22
+	mov ax, vP28[0]
+	mov dx, Nr2678[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP28[2]
+	mov dx, Nr2678[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP28[4]
+	mov dx, Nr2678[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
+	mov cx, cp21[0]
+	mov dx, cp21[2]
+	mov al, rubik[21]
+	mov color, al
+	call pointexpand
+	cmp si, 21
+	je fillplus
+lcp22:
+	cmp si, 22
+	jne lcp23
+	mov ax, vP28[0]
+	mov dx, Nr2678[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP28[2]
+	mov dx, Nr2678[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP28[4]
+	mov dx, Nr2678[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
+	mov cx, cp22[0]
+	mov dx, cp22[2]
+	mov al, rubik[22]
+	mov color, al
+	call pointexpand
+	cmp si, 22
+	je fillplus
+lcp23:
+	cmp si, 23
+	jne ipt
+	mov ax, vP28[0]
+	mov dx, Nr2678[0]
+	imul dx
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP28[2]
+	mov dx, Nr2678[2]
+	imul dx
+	call EXadd
+	mov bx, dx
+	mov cx, ax
+	mov ax, vP28[4]
+	mov dx, Nr2678[4]
+	imul dx
+	call EXadd
+	cmp dx, 0
+	jge fillplus
+	mov cx, cp23[0]
+	mov dx, cp23[2]
+	mov al, rubik[23]
+	mov color, al
+	call pointexpand
+	cmp si, 23
+	je fillplus
+
 
     
     jmp ipt
