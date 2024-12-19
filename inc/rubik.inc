@@ -1,433 +1,433 @@
 .code
 topL proc
     push ax
-    push bx
+    
 
-    mov ax, rubik[0]
-    mov bx, rubik[6]
-    mov rubik[6], ax
-    mov ax, rubik[4]
-    mov rubik[4], bx
-    mov bx, rubik[2]
-    mov rubik[2], ax
-    mov rubik[0], bx
+    mov al, rubik[0]
+    mov ah, rubik[6]
+    mov rubik[6], al
+    mov al, rubik[4]
+    mov rubik[4], ah
+    mov ah, rubik[2]
+    mov rubik[2], al
+    mov rubik[0],ah
 
-    mov ax, rubik[3]
-    mov bx, rubik[1]
-    mov rubik[1], ax
-    mov ax, rubik[7]
-    mov rubik[7], bx
-    mov bx, rubik[5]
-    mov rubik[5], ax
-    mov rubik[3], bx
+    mov al, rubik[3]
+    mov ah, rubik[1]
+    mov rubik[1], al
+    mov al, rubik[7]
+    mov rubik[7],ah
+    mov ah, rubik[5]
+    mov rubik[5], al
+    mov rubik[3],ah
 
-    mov ax, rubik[16]
-    mov bx, rubik[19]
-    mov rubik[19], ax
-    mov ax, rubik[18]
-    mov rubik[18], bx
-    mov bx, rubik[17]
-    mov rubik[17], ax
-    mov rubik[16], bx
+    mov al, rubik[16]
+    mov ah, rubik[19]
+    mov rubik[19], al
+    mov al, rubik[18]
+    mov rubik[18],ah
+    mov ah, rubik[17]
+    mov rubik[17], al
+    mov rubik[16],ah
 
-    pop bx
+    
     pop ax
     ret
 topL endp
 
 topR proc
     push ax
-    push bx
+    
 
-    mov ax, rubik[6]
-    mov bx, rubik[0]
-    mov rubik[0], ax
-    mov ax, rubik[2]
-    mov rubik[2], bx
-    mov bx, rubik[4]
-    mov rubik[4], ax
-    mov rubik[6], bx
+    mov al, rubik[6]
+    mov ah, rubik[0]
+    mov rubik[0], al
+    mov al, rubik[2]
+    mov rubik[2],ah
+    mov ah, rubik[4]
+    mov rubik[4], al
+    mov rubik[6],ah
 
-    mov ax, rubik[1]
-    mov bx, rubik[3]
-    mov rubik[3], ax
-    mov ax, rubik[5]
-    mov rubik[5], bx
-    mov bx, rubik[7]
-    mov rubik[7], ax
-    mov rubik[1], bx
+    mov al, rubik[1]
+    mov ah, rubik[3]
+    mov rubik[3], al
+    mov al, rubik[5]
+    mov rubik[5],ah
+    mov ah, rubik[7]
+    mov rubik[7], al
+    mov rubik[1],ah
 
-    mov ax, rubik[19]
-    mov bx, rubik[16]
-    mov rubik[16], ax
-    mov ax, rubik[17]
-    mov rubik[17], bx
-    mov bx, rubik[18]
-    mov rubik[18], ax
-    mov rubik[19], bx
+    mov al, rubik[19]
+    mov ah, rubik[16]
+    mov rubik[16], al
+    mov al, rubik[17]
+    mov rubik[17],ah
+    mov ah, rubik[18]
+    mov rubik[18], al
+    mov rubik[19],ah
 
-    pop bx
+    
     pop ax
     ret
 topR endp
 
 bottomL proc
     push ax
-    push bx
+    
 
-    mov ax, rubik[8]
-    mov bx, rubik[14]
-    mov rubik[14], ax
-    mov ax, rubik[12]
-    mov rubik[12], bx
-    mov bx, rubik[10]
-    mov rubik[10], ax
-    mov rubik[8], bx
+    mov al, rubik[8]
+    mov ah, rubik[14]
+    mov rubik[14], al
+    mov al, rubik[12]
+    mov rubik[12],ah
+    mov ah, rubik[10]
+    mov rubik[10], al
+    mov rubik[8],ah
 
-    mov ax, rubik[11]
-    mov bx, rubik[9]
-    mov rubik[9], ax
-    mov ax, rubik[15]
-    mov rubik[15], bx
-    mov bx, rubik[13]
-    mov rubik[13], ax
-    mov rubik[11], bx
+    mov al, rubik[11]
+    mov ah, rubik[9]
+    mov rubik[9], al
+    mov al, rubik[15]
+    mov rubik[15],ah
+    mov ah, rubik[13]
+    mov rubik[13], al
+    mov rubik[11],ah
 
-    mov ax, rubik[20]
-    mov bx, rubik[23]
-    mov rubik[23], ax
-    mov ax, rubik[22]
-    mov rubik[22], bx
-    mov bx, rubik[21]
-    mov rubik[21], ax
-    mov rubik[20], bx
+    mov al, rubik[20]
+    mov ah, rubik[23]
+    mov rubik[23], al
+    mov al, rubik[22]
+    mov rubik[22],ah
+    mov ah, rubik[21]
+    mov rubik[21], al
+    mov rubik[20],ah
 
-    pop bx
+    
     pop ax
     ret
 bottomL endp
 
 bottomR proc
     push ax
-    push bx
+    
 
-    mov ax, rubik[14]
-    mov bx, rubik[8]
-    mov rubik[8], ax
-    mov ax, rubik[10]
-    mov rubik[10], bx
-    mov bx, rubik[12]
-    mov rubik[12], ax
-    mov rubik[14], bx
+    mov al, rubik[14]
+    mov ah, rubik[8]
+    mov rubik[8], al
+    mov al, rubik[10]
+    mov rubik[10],ah
+    mov ah, rubik[12]
+    mov rubik[12], al
+    mov rubik[14],ah
 
-    mov ax, rubik[9]
-    mov bx, rubik[11]
-    mov rubik[11], ax
-    mov ax, rubik[13]
-    mov rubik[13], bx
-    mov bx, rubik[15]
-    mov rubik[15], ax
-    mov rubik[9], bx
+    mov al, rubik[9]
+    mov ah, rubik[11]
+    mov rubik[11], al
+    mov al, rubik[13]
+    mov rubik[13],ah
+    mov ah, rubik[15]
+    mov rubik[15], al
+    mov rubik[9],ah
 
-    mov ax, rubik[23]
-    mov bx, rubik[20]
-    mov rubik[20], ax
-    mov ax, rubik[21]
-    mov rubik[21], bx
-    mov bx, rubik[22]
-    mov rubik[22], ax
-    mov rubik[23], bx
+    mov al, rubik[23]
+    mov ah, rubik[20]
+    mov rubik[20], al
+    mov al, rubik[21]
+    mov rubik[21],ah
+    mov ah, rubik[22]
+    mov rubik[22], al
+    mov rubik[23],ah
 
-    pop bx
+    
     pop ax
     ret
 bottomR endp
 
 closeL proc
     push ax
-    push bx
+    
 
-    mov ax, rubik[0]
-    mov bx, rubik[8]
-    mov rubik[8], ax
-    mov ax, rubik[9]
-    mov rubik[9], bx
-    mov bx, rubik[1]
-    mov rubik[1], ax
-    mov rubik[0], bx
+    mov al, rubik[0]
+    mov ah, rubik[8]
+    mov rubik[8], al
+    mov al, rubik[9]
+    mov rubik[9],ah
+    mov ah, rubik[1]
+    mov rubik[1], al
+    mov rubik[0],ah
 
-    mov ax, rubik[2]
-    mov bx, rubik[16]
-    mov rubik[16], ax
-    mov ax, rubik[15]
-    mov rubik[15], bx
-    mov bx, rubik[21]
-    mov rubik[21], ax
-    mov rubik[2], bx
+    mov al, rubik[2]
+    mov ah, rubik[16]
+    mov rubik[16], al
+    mov al, rubik[15]
+    mov rubik[15],ah
+    mov ah, rubik[21]
+    mov rubik[21], al
+    mov rubik[2],ah
 
-    mov ax, rubik[20]
-    mov bx, rubik[10]
-    mov rubik[10], ax
-    mov ax, rubik[17]
-    mov rubik[17], bx
-    mov bx, rubik[7]
-    mov rubik[7], ax
-    mov rubik[20], bx
+    mov al, rubik[20]
+    mov ah, rubik[10]
+    mov rubik[10], al
+    mov al, rubik[17]
+    mov rubik[17],ah
+    mov ah, rubik[7]
+    mov rubik[7], al
+    mov rubik[20],ah
 
-    pop bx
+    
     pop ax
     ret
 closeL endp
 
 closeR proc
     push ax
-    push bx
+    
 
-    mov ax, rubik[8]
-    mov bx, rubik[0]
-    mov rubik[0], ax
-    mov ax, rubik[1]
-    mov rubik[1], bx
-    mov bx, rubik[9]
-    mov rubik[9], ax
-    mov rubik[8], bx
+    mov al, rubik[8]
+    mov ah, rubik[0]
+    mov rubik[0], al
+    mov al, rubik[1]
+    mov rubik[1],ah
+    mov ah, rubik[9]
+    mov rubik[9], al
+    mov rubik[8],ah
 
-    mov ax, rubik[16]
-    mov bx, rubik[2]
-    mov rubik[2], ax
-    mov ax, rubik[21]
-    mov rubik[21], bx
-    mov bx, rubik[15]
-    mov rubik[15], ax
-    mov rubik[16], bx
+    mov al, rubik[16]
+    mov ah, rubik[2]
+    mov rubik[2], al
+    mov al, rubik[21]
+    mov rubik[21],ah
+    mov ah, rubik[15]
+    mov rubik[15], al
+    mov rubik[16],ah
 
-    mov ax, rubik[17]
-    mov bx, rubik[10]
-    mov rubik[10], ax
-    mov ax, rubik[20]
-    mov rubik[20], bx
-    mov bx, rubik[7]
-    mov rubik[7], ax
-    mov rubik[17], bx
+    mov al, rubik[17]
+    mov ah, rubik[10]
+    mov rubik[10], al
+    mov al, rubik[20]
+    mov rubik[20],ah
+    mov ah, rubik[7]
+    mov rubik[7], al
+    mov rubik[17],ah
 
-    pop bx
+    
     pop ax
     ret
 closeR endp
 
 farL proc
     push ax
-    push bx
-
-    mov ax, rubik[11]
-    mov bx, rubik[18]
-    mov rubik[18], ax
-    mov ax, rubik[6]
-    mov rubik[6], bx
-    mov bx, rubik[23]
-    mov rubik[23], ax
-    mov rubik[11], bx
     
-    mov ax, rubik[3]
-    mov bx, rubik[19]
-    mov rubik[19], ax
-    mov ax, rubik[14]
-    mov rubik[14], bx
-    mov bx, rubik[22]
-    mov rubik[22], ax
-    mov rubik[3], bx
 
-    mov ax, rubik[4]
-    mov bx, rubik[5]
-    mov rubik[5], ax
-    mov ax, rubik[13]
-    mov rubik[13], bx
-    mov bx, rubik[12]
-    mov rubik[12], ax
-    mov rubik[4], bx
+    mov al, rubik[11]
+    mov ah, rubik[18]
+    mov rubik[18], al
+    mov al, rubik[6]
+    mov rubik[6],ah
+    mov ah, rubik[23]
+    mov rubik[23], al
+    mov rubik[11],ah
     
-    pop bx
+    mov al, rubik[3]
+    mov ah, rubik[19]
+    mov rubik[19], al
+    mov al, rubik[14]
+    mov rubik[14],ah
+    mov ah, rubik[22]
+    mov rubik[22], al
+    mov rubik[3],ah
+
+    mov al, rubik[4]
+    mov ah, rubik[5]
+    mov rubik[5], al
+    mov al, rubik[13]
+    mov rubik[13],ah
+    mov ah, rubik[12]
+    mov rubik[12], al
+    mov rubik[4],ah
+    
+    
     pop ax
     ret
 farL endp
 
 farR proc
     push ax
-    push bx
+    
 
-    mov ax, rubik[19]
-    mov bx, rubik[3]
-    mov rubik[3], ax
-    mov ax, rubik[22]
-    mov rubik[22], bx
-    mov bx, rubik[14]
-    mov rubik[14], ax
-    mov rubik[19], bx
+    mov al, rubik[19]
+    mov ah, rubik[3]
+    mov rubik[3], al
+    mov al, rubik[22]
+    mov rubik[22],ah
+    mov ah, rubik[14]
+    mov rubik[14], al
+    mov rubik[19],ah
 
-    mov ax, rubik[18]
-    mov bx, rubik[11]
-    mov rubik[11], ax
-    mov ax, rubik[23]
-    mov rubik[23], bx
-    mov bx, rubik[6]
-    mov rubik[6], ax
-    mov rubik[18], bx
+    mov al, rubik[18]
+    mov ah, rubik[11]
+    mov rubik[11], al
+    mov al, rubik[23]
+    mov rubik[23],ah
+    mov ah, rubik[6]
+    mov rubik[6], al
+    mov rubik[18],ah
 
-    mov ax, rubik[12]
-    mov bx, rubik[13]
-    mov rubik[13], ax
-    mov ax, rubik[5]
-    mov rubik[5], bx
-    mov bx, rubik[4]
-    mov rubik[4], ax
-    mov rubik[12], bx
+    mov al, rubik[12]
+    mov ah, rubik[13]
+    mov rubik[13], al
+    mov al, rubik[5]
+    mov rubik[5],ah
+    mov ah, rubik[4]
+    mov rubik[4], al
+    mov rubik[12],ah
 
-    pop bx
+    
     pop ax
     ret
 farR endp
 
 rightF proc
     push ax
-    push bx
+    
 
-    mov ax, rubik[1]
-    mov bx, rubik[18]
-    mov rubik[18], ax
-    mov ax, rubik[12]
-    mov rubik[12], bx
-    mov bx, rubik[21]
-    mov rubik[21], ax
-    mov rubik[1], bx
+    mov al, rubik[1]
+    mov ah, rubik[18]
+    mov rubik[18], al
+    mov al, rubik[12]
+    mov rubik[12],ah
+    mov ah, rubik[21]
+    mov rubik[21], al
+    mov rubik[1],ah
 
-    mov ax, rubik[9]
-    mov bx, rubik[17]
-    mov rubik[17], ax
-    mov ax, rubik[4]
-    mov rubik[4], bx
-    mov bx, rubik[22]
-    mov rubik[22], ax
-    mov rubik[9], bx
+    mov al, rubik[9]
+    mov ah, rubik[17]
+    mov rubik[17], al
+    mov al, rubik[4]
+    mov rubik[4],ah
+    mov ah, rubik[22]
+    mov rubik[22], al
+    mov rubik[9],ah
 
-    mov ax, rubik[2]
-    mov bx, rubik[3]
-    mov rubik[3], ax
-    mov ax, rubik[11]
-    mov rubik[11], bx
-    mov bx, rubik[10]
-    mov rubik[10], ax
-    mov rubik[2], bx
+    mov al, rubik[2]
+    mov ah, rubik[3]
+    mov rubik[3], al
+    mov al, rubik[11]
+    mov rubik[11],ah
+    mov ah, rubik[10]
+    mov rubik[10], al
+    mov rubik[2],ah
 
-    pop bx
+    
     pop ax
     ret
 rightF endp
 
 rightB proc
     push ax
-    push bx
+    
 
-    mov ax, rubik[18]
-    mov bx, rubik[1]
-    mov rubik[1], ax
-    mov ax, rubik[21]
-    mov rubik[21], bx
-    mov bx, rubik[12]
-    mov rubik[12], ax
-    mov rubik[18], bx
+    mov al, rubik[18]
+    mov ah, rubik[1]
+    mov rubik[1], al
+    mov al, rubik[21]
+    mov rubik[21],ah
+    mov ah, rubik[12]
+    mov rubik[12], al
+    mov rubik[18],ah
 
-    mov ax, rubik[17]
-    mov bx, rubik[9]
-    mov rubik[9], ax
-    mov ax, rubik[22]
-    mov rubik[22], bx
-    mov bx, rubik[4]
-    mov rubik[4], ax
-    mov rubik[17], bx
+    mov al, rubik[17]
+    mov ah, rubik[9]
+    mov rubik[9], al
+    mov al, rubik[22]
+    mov rubik[22],ah
+    mov ah, rubik[4]
+    mov rubik[4], al
+    mov rubik[17],ah
 
 
-    mov ax, rubik[3]
-    mov bx, rubik[2]
-    mov rubik[2], ax
-    mov ax, rubik[10]
-    mov rubik[10], bx
-    mov bx, rubik[11]
-    mov rubik[11], ax
-    mov rubik[3], bx
+    mov al, rubik[3]
+    mov ah, rubik[2]
+    mov rubik[2], al
+    mov al, rubik[10]
+    mov rubik[10],ah
+    mov ah, rubik[11]
+    mov rubik[11], al
+    mov rubik[3],ah
 
-    pop bx
+    
     pop ax
     ret
 rightB endp
 
 leftF proc
     push ax
-    push bx
-
-    mov ax, rubik[8]
-    mov bx, rubik[16]
-    mov rubik[16], ax
-    mov ax, rubik[5]
-    mov rubik[5], bx
-    mov bx, rubik[23]
-    mov rubik[23], ax
-    mov rubik[8], bx
     
-    mov ax, rubik[0]
-    mov bx, rubik[19]
-    mov rubik[19], ax
-    mov ax, rubik[13]
-    mov rubik[13], bx
-    mov bx, rubik[20]
-    mov rubik[20], ax
-    mov rubik[0], bx
 
-    mov ax, rubik[7]
-    mov bx, rubik[6]
-    mov rubik[6], ax
-    mov ax, rubik[14]
-    mov rubik[14], bx
-    mov bx, rubik[15]
-    mov rubik[15], ax
-    mov rubik[7], bx
+    mov al, rubik[8]
+    mov ah, rubik[16]
+    mov rubik[16], al
+    mov al, rubik[5]
+    mov rubik[5],ah
+    mov ah, rubik[23]
+    mov rubik[23], al
+    mov rubik[8],ah
+    
+    mov al, rubik[0]
+    mov ah, rubik[19]
+    mov rubik[19], al
+    mov al, rubik[13]
+    mov rubik[13],ah
+    mov ah, rubik[20]
+    mov rubik[20], al
+    mov rubik[0],ah
 
-    pop bx
+    mov al, rubik[7]
+    mov ah, rubik[6]
+    mov rubik[6], al
+    mov al, rubik[14]
+    mov rubik[14],ah
+    mov ah, rubik[15]
+    mov rubik[15],al
+    mov rubik[7],ah
+
+    
     pop ax
     ret
 leftF endp
 
 leftB proc
     push ax
-    push bx
+    
 
-    mov ax, rubik[16]
-    mov bx, rubik[8]
-    mov rubik[8], ax
-    mov ax, rubik[23]
-    mov rubik[23], bx
-    mov bx, rubik[5]
-    mov rubik[5], ax
-    mov rubik[16], bx
+    mov al, rubik[16]
+    mov ah, rubik[8]
+    mov rubik[8],al
+    mov al, rubik[23]
+    mov rubik[23],ah
+    mov ah, rubik[5]
+    mov rubik[5],al
+    mov rubik[16],ah
 
-    mov ax, rubik[19]
-    mov bx, rubik[0]
-    mov rubik[0], ax
-    mov ax, rubik[20]
-    mov rubik[20], bx
-    mov bx, rubik[13]
-    mov rubik[13], ax
-    mov rubik[19], bx
+    mov al, rubik[19]
+    mov ah, rubik[0]
+    mov rubik[0],al
+    mov al, rubik[20]
+    mov rubik[20],ah
+    mov ah, rubik[13]
+    mov rubik[13],al
+    mov rubik[19],ah
 
-    mov ax, rubik[6]
-    mov bx, rubik[7]
-    mov rubik[7], ax
-    mov ax, rubik[15]
-    mov rubik[15], bx
-    mov bx, rubik[14]
-    mov rubik[14], ax
-    mov rubik[6], bx
+    mov al, rubik[6]
+    mov ah, rubik[7]
+    mov rubik[7],al
+    mov al, rubik[15]
+    mov rubik[15],ah
+    mov ah, rubik[14]
+    mov rubik[14],al
+    mov rubik[6],ah
 
-    pop bx
+    
     pop ax
     ret
 leftB endp
